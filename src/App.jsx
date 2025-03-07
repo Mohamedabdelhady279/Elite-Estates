@@ -12,10 +12,14 @@ import AboutUs from './Pages/AboutUs/AboutUs'
 import FavProducts from './Pages/FavProducts/FavProducts'
 import Products from './Pages/Products/Products'
 import FavProductsProvider from './context/FavContext/FavContext'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 
 
 function App() {
+ 
+
   
   const routes= createBrowserRouter([
     {
