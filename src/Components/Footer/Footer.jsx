@@ -55,7 +55,7 @@ experiences with our clients.
         
     </div>
 
-    <div className='flex  gap-8 mt-6  py-10 justify-center items-center'>
+    <div className='flex  gap-8   py-10 justify-center items-center'>
       <NavLink to =''>   <img src={facebookIcon} alt="" /></NavLink>
       <NavLink to =''>   <img src={linkedinIcon} alt="" /></NavLink>
        <NavLink to =''><img src={instagramIcon} alt="" /></NavLink>

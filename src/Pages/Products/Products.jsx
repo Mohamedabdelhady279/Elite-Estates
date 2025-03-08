@@ -24,7 +24,7 @@ export default function Products() {
   return (
 
     <>
-    <div className='grid grid-cols-12 gap-2 w-[1336px] mx-auto py-18'>
+    <div className='grid grid-cols-12 px-16 pt-14 gap-2'>
         {products ? 
         products.map((product)=>(
             <ProductCard key={product.id} productInfo={product} />

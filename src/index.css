@@ -75,3 +75,183 @@ button:focus-visible {
   background-size: cover;
 
 }
+
+/* =================================================================css */
+
+.about{
+  background: #f2f2f2;
+}
+.about_us{
+  background: #AEC6E8;
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   
+}
+.about_title{
+  width: 37%;
+  padding-bottom: 50px;
+}
+.about_title h2{
+  font-size: 45px;
+  font-weight: 600;
+  padding-bottom: 15px;
+}
+.about_us .images{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ position: absolute;
+ top:  65%;
+ left: 7%;
+
+}
+.about_contact{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  background-color: #f2f2f2;
+  height: 80vh;
+  width: 100%;
+  margin-top: 20%;
+
+}
+.about-contact-all{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  position: relative;
+}
+.about_contact-contant{
+   
+  width: 25%;
+  position: absolute;
+  left: 15%;
+  top: 20px;
+}
+.about_contact-contant h3{
+    
+   font-size: 20px;
+   font-weight: 400;
+   
+    
+}
+.about_contact-contant h4{
+  font-weight: 700;
+  font-size: 35px;
+  padding-top: 10px;
+}
+.about_contact-contant p{
+  color: #606060;
+  padding-block: 15px;
+}
+.btn{
+  background: #0055CD;
+  border-radius: 5px;
+  padding: 8px 40px;
+  color: #fff;
+   
+}
+.about_contact-images{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 25%;
+  position: relative;
+ 
+}
+.img_contact1{
+  position: absolute ;
+  top: 10%;
+
+  right: -100%;
+  
+    
+}
+.about_vision{
+  width: 70%;
+  margin:   auto;
+  margin-top: 90px;
+   
+
+}
+.about_vision h3{
+   padding-top: 60px;
+  
+  font-size: 20px;
+}
+.about_vision h4{
+  font-weight: 700;
+  font-size: 38px;
+  padding-block: 10px;
+}
+.about_vision p{
+  color: #606060;
+}
+.about_vision-content{
+   display: flex;
+   justify-content: space-between;
+   margin-top: 70px;
+   
+}
+.about_vision-image{
+  width: 50%;
+}
+.about_vision-image img{
+  width: 100%;
+}
+ 
+.about_vision-info{
+  
+  width: 50%;
+   padding-left: 80px;
+}
+.about_vision-details{
+   margin: 12px 50px;
+
+}
+.about_vision-details img{
+  width: 12%;
+}
+@media only screen and (max-width: 992px){
+  .about_us .images{
+    width: 30%;
+    position: absolute;
+    top:  70%;
+    left: 37%;
+   
+   }
+  .about_us .images img{
+    width: 60%;
+   
+   }
+   .about_vision-info{
+  
+     
+     padding-left: 50px;
+  }
+ 
+  .about_vision-details h3{
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+  }
+  .about_vision-details p{
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .about_vision-details img{
+    width: 10%;
+    
+  }
+  
+}
+@media only screen and (max-width: 768px){
+
+}
+@media only screen and (max-width: 576px){
+
+}

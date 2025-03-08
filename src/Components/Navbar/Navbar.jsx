@@ -58,9 +58,9 @@ export default function Navbar() {
         <NavLink className={({isActive})=>` before:w-0 text-white ${isActive ? 'font-bold text-blue-200 before:absolute before:w-full hover:w-full before:transition-[width] before:duration-500 before:h-[2px] before:bg-white before:left-0 before:bottom-0  ':' hover:text-gray-200' }`} to='/login'>Login</NavLink>
        </li>
 
-       <li className='relative'>
+       {/* <li className='relative'>
         <NavLink to='/productdetails' className={`before:w-0 text-white ({isActive})=> isActive ? 'font-bold text-blue-200 before:absolute before:w-0 hover:before:w-full before:transition-[width] before:duration-500  before:h-[2px] before:bg-white before:left-0 before:bottom-0  ':' hover:text-gray-200 ' `} >Product details</NavLink>
-       </li>
+       </li> */}
      </ul>
 
         <button className="w-fit px-3 py-2 border border-white rounded cursor-pointer">
