@@ -30,6 +30,7 @@ function App() {
         {path:'aboutus' ,element:<AboutUs />},
         {path:'favproducts' ,element:<FavProducts/>},
         {path:'products' ,element:<Products />},
+        {path:'services' ,element:<Services />},
         {path:'filteredproducts' ,element:<FilteredProducts />},
         {path:'products/:id' ,element:<ProductDetails />},
     

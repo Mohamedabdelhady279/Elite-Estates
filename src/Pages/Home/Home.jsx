@@ -52,9 +52,9 @@ export default function Home() {
     <>
     <div className='min-h-screen bg absolute top-0 left-0 right-0 z-5 '>
         <Navbar />
-        <div className='text-white w-[1336px] mx-auto mt-20 pt-20 '>
-            <h2 className='text-5xl mb-8 font-bold fs-1 capitalize leading-14'>find a house <br /> that suits you </h2>
-            <p className='mb-8 sm:text-center lg:text-left lg:w-full sm:w-3/4 mx-auto'>want to fin a home? we are ready to help you find one that suits <br /> your lifestyle and needs</p>
+        <div className='text-white w-[1336px] mx-auto mt-20 pt-20  sm:pl-12'>
+            <h2 className='text-5xl mb-8  font-bold fs-1 capitalize leading-14'>find a house <br /> that suits you </h2>
+            <p className='mb-8  lg:text-left lg:w-full sm:w-3/4 '>want to fin a home? we are ready to help you find one that suits <br /> your lifestyle and needs</p>
             <button className='bg-[#1E1E1E] text-white w-fit px-4 py-1 w-fullmb-8 cursor-pointer '>Get started</button>
             <div className='flex justify-between w-100'>
                 <div>
@@ -114,11 +114,11 @@ export default function Home() {
         </div>
     </div> */}
 
-    <div className='absolute mb-16 -bottom-15 left-[15%] z-20 w-[70%]'>
+    <div className='absolute mb-16 sm:-bottom-65 lg:-bottom-45 left-[15%] z-100 w-[70%]'>
         <Search />
     </div>
 
-      <div className='relative z-30'>
+      <div className='relative z-30 pt-[600px]'>
         <Popular  />
         </div>  
          <Services />

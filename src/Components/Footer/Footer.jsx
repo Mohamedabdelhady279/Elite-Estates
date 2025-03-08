@@ -9,9 +9,9 @@ import { NavLink } from 'react-bootstrap';
 export default function Footer() {
   return (
     <>
-    <div className=' w-full    mt-20 bg-[#000000] text-white '>
-        <div className='w-[1336px] mx-auto '>
-    <div className='text-[#969696] flex gap-2 w-1/3  mb-10'>
+    <div className=' w-full   mt-20 bg-[#000000] text-white '>
+        <div className='px-16 mx-auto '>
+    <div className='text-[#969696] flex gap-2 sm:w-4/5 md:w-2/3 lg:w-1/3  mb-10'>
     <i className="fa-solid fa-quote-left mt-16"></i>
     <p className='mt-16'>
     Our business is built off of close relationships and we are 
@@ -22,7 +22,7 @@ experiences with our clients.
     </div>
     
     <div className='grid grid-cols-12 justify-between'>
-        <div className="col-span-4">
+        <div className="sm:col-span-12 md:col-span-6 lg:col-span-4 sm:mb-6">
             <h2 className='font-semibold text-xl mb-6'>Contact Us</h2>
             <div className='flex gap-2 items-center mb-2'>
             <i className="fa-solid fa-location-dot"></i>
@@ -34,7 +34,7 @@ experiences with our clients.
             </div>
         </div>
 
-        <div className="col-span-4">
+        <div className="sm:col-span-12 md:col-span-6 lg:col-span-4 sm:mb-6">
             <h2 className='font-semibold text-xl mb-6'>Quick Links</h2>
             <ul>
                 <li className='mb-1' > <Link to='/aboutus'>About Us</Link> </li>
@@ -44,7 +44,7 @@ experiences with our clients.
             </ul>
         </div>
 
-        <div className="col-span-4">
+        <div className="sm:col-span-12 md:col-span-6 lg:col-span-4 sm:mb-6">
             <h2 className='mb-10 font-semibold text-xl'>Newsletter</h2>
             <div className='relative'>
                          <input type="email" name="" id="" className='rounded-md px-2 py-1 w-3/4 bg-[#FFFFFF1A]' placeholder='Email Address' />

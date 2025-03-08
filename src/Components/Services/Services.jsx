@@ -3,21 +3,21 @@ import React from 'react'
 export default function Services() {
   return (
     <>
-    <div className=' w-[1336px] mx-auto  my-20 relative'>
-    <h2 className='text-[#3E3E3E] uppercase absolute mb-12 -top-10 right-12 font-semibold '>   Our service</h2>
+    <div className=' px-16 mb-6 mx-auto pt-10 my-20 relative'>
+    <h2 className='text-[#3E3E3E] uppercase absolute mb-2 -top-10 right-12 font-semibold '>   Our service</h2>
     <span className='h-[2px] w-[40px] bg-[#3E3E3E] absolute -top-7 right-0'></span>
       
 
-    <div className='grid grid-cols-12 gap-8 mt-16'>
+    <div className='grid grid-cols-12 gap-8 mt-2'>
        
-        <div className='col-span-6 relative'>
+        <div className='sm:col-span-12 lg:col-span-6 relative'>
             <img className='h-[507px]' src="https://s3-alpha-sig.figma.com/img/67bd/1670/6ff51a8f9c97ef0e193b54d07c18a86e?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=CRqp1jqugn~BR55OkVynnMW2Ul1MEuPpgX--hJTnOYjTHDY3wXTVFvGamjB556NuCkTg-RuDU1LUgYcWTFp8mhqgBazd9XPr9tnhAX86fjLBUrU~G1ZsnuDSxCYBg5ugV1amfmBVDcF8MibtKJBb3ETEMiflz7b79-dngI6090YwsSG4~sVSPD6nPJSkMjpM82I9oENxecSOvqWH~j946~LxcA~6hXIoDfLD7p5~eZHEkOkuTb2byg8t7Iq~i6T~eAH8JmeMDtOWvdUknQY3Au~8RP-43DwHmvAQRtet9Vo2fPL1GWm0LAXdKW9CFvbwph~-7wI7Gx59E30OozfkAA__" alt="" />
            <div className='absolute top-[50%] left-[50%]'>
             <img src="https://ibb.co/4g1WJTd5" alt="" />
             </div> 
         </div>
 
-        <div className='col-span-6'>
+        <div className='sm:col-span-12 lg:col-span-6'>
             <h3 className='text-[#000000] text-5xl mb-8 font-bold leading-16'>Your Dream House Is
             Our Priority</h3>
             <p className='mb-5 text-[#606060] text-sm'>Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, 

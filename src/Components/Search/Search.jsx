@@ -49,32 +49,32 @@ const handleSearch = () => {
   return (
     <>
 
-    <div className='bg-white shadow-2xl w-full mx-auto p-8 '>
+    <div className='bg-white shadow-2xl w-full mx-auto p-8  '>
         <p className='mb-4'>Search for available properties</p>
         <div className='grid grid-cols-12 gap-2 w-[80%] mx-auto '>
-           <div className='relative col-span-3 '>
+           <div className='relative sm:col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 '>
 
            <input
            value={location}
            onChange={(e)=> {setLocation(e.target.value)}}
-           type="text" placeholder='Location' className='border-1 border-gray-400 p-1 rounded-xs ' />
+           type="text" placeholder='Location' className='border-1 border-gray-400 p-1 rounded-xs w-full ' />
 
            <i className="fa-solid fa-location-dot absolute right-3 top-2"></i>
            </div>
 
-           <div className='relative col-span-3 '>
+           <div className='relative sm:col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 '>
 
            <input
            value={type}
            onChange={(e)=>setType(e.target.value)}
-           type="text" placeholder='Properity Type' className='border-1 border-gray-400 p-1 rounded-xs'  />
+           type="text" placeholder='Properity Type' className='border-1 border-gray-400 p-1 rounded-xs w-full'  />
 
            <div className='absolute right-3 top-2'>
            <img className='w-[15px] h-[15px]' src="https://s3-alpha-sig.figma.com/img/fb31/2501/e614da69aa1eceb394fba9e4fd3c6d6b?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=ZKW7jh8X8cHnQIVos99NawDr-zbv5dDbjPpDiOnupMajlkaXmUaT7WxYlLXdYtQdZLg7~d7bKSkoawE2GOHIuUBpaWAGj7qEPtAb-6P4EnUcoxtD8Cil6ZduCZB7epklj0jbi5FIqgAIyBTtq7AAiLbAqezOiTCXk4I2ZfFrPB~XpLEQ5tNQG6Xf6dzr9W4uac5T8mIrTYq9KBBA3Vu~5DcJdMIZkzTDYAVyBj6998-GmkXpwJzKU0AlKJz2bxRrRmAd23W8-DiymuwIqE70l3p8hhxKr-6FeNjVq6pmlSIwQx1YHpDW7KitYt03YBiRfGRublZu1zri9bdnhxydSw__" alt="" />
           </div>
            </div>
 
-           <div className='relative col-span-3 '>
+           <div className='relative sm:col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 '>
 
            <input
            value={budget}
