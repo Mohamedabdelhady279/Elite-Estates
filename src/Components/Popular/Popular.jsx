@@ -18,7 +18,7 @@ export default function Popular() {
     <span className='h-[2px] w-[30px] bg-[#3E3E3E] absolute top-3.5 -left-10'></span> Popular</h2>
   <div className='flex justify-between mb-4'>
     <p className='text-2xl'> Our Popular Homes</p>
-    <Link to='/products' className='text-[#606060]'>Explore all <span><i class="fa-solid fa-arrow-right"></i></span> </Link>
+    <Link to='/products' className='text-[#606060]'>Explore all <span><i className="fa-solid fa-arrow-right"></i></span> </Link>
   </div>
 
   <div className= 'grid grid-cols-12 gap-4 '>
@@ -71,7 +71,7 @@ export default function Popular() {
           <p>4 Bed</p>
         </div>
         <div className='flex gap-1.5 items-center'>
-        <i class="fa-solid fa-chart-column w-[20px] h-[20px]"></i>
+        <i className="fa-solid fa-chart-column w-[20px] h-[20px]"></i>
         <p>10 x 10 m</p>  
         </div>
         <div className='flex gap-1.5 items-center'>
@@ -101,7 +101,7 @@ export default function Popular() {
           <p>4 Bed</p>
         </div>
         <div className='flex gap-1.5 items-center'>
-        <i class="fa-solid fa-chart-column w-[20px] h-[20px]"></i>
+        <i className="fa-solid fa-chart-column w-[20px] h-[20px]"></i>
         <p>10 x 10 m</p>  
         </div>
         <div className='flex gap-1.5 items-center'>
