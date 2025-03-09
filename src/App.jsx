@@ -15,6 +15,7 @@ import FavProductsProvider from './context/FavContext/FavContext'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import FilteredProducts from './Pages/FilteredProducts/FilteredProducts'
+import Properities from './Pages/Properities/Properities'
 
 
 
@@ -33,6 +34,7 @@ function App() {
         {path:'services' ,element:<Services />},
         {path:'filteredproducts' ,element:<FilteredProducts />},
         {path:'products/:id' ,element:<ProductDetails />},
+        {path:'properities' ,element:<Properities/>},
     
       ]
     }

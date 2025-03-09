@@ -128,7 +128,7 @@ button:focus-visible {
   margin-top: 20%;
 
 }
-.about-contact-all{
+/* .about-contact-all{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -164,8 +164,8 @@ button:focus-visible {
   padding: 8px 40px;
   color: #fff;
    
-}
-.about_contact-images{
+} */
+/* .about_contact-images{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -264,4 +264,12 @@ button:focus-visible {
 }
 @media only screen and (max-width: 576px){
 
+} */
+
+
+.bgprop{
+background-image: url('https://s3-alpha-sig.figma.com/img/fc8f/3d6e/5ecb3905e48f17872ecb4c52cea312da?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=t9IpwBJ-mqSRYJC6kH2hesoTvG8RvLGvbYyACGlQhjgS3PdUmPfcxje2XWkBDVWMq3CK-6yZ3SvZenvUvJY8lfRhiqU35DSUpqbzF1aKX2lq1FJYkLEQ9YcM~aHcnoEeZR-j25JlhfOWegG9J8Cyeru53ys5twfRyywQKAQQN6HHgdgrAPINn7psSX7~DFLk7k27q7ADu8iPDD6dDjDKYg7UfVZ709cIqEZVJOXxxM5lb72EKGhReHUU~8HFYJV5ATq~c1SG1NblX4KF7c9omGjNlFTQJqhL83GSJUNr9Yu4XuLljLpcBDmKBsMoyH0Lb5VA9XuxoJhUR~1Bb-MFDQ__');
+/* background-position:top; */
+background-size: cover;
+background-position:top 25% ;
 }

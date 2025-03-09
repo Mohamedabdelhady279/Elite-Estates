@@ -9,7 +9,7 @@ import { NavLink } from 'react-bootstrap';
 export default function Footer() {
   return (
     <>
-    <div className=' w-full   mt-20 bg-[#000000] text-white '>
+    <div className=' w-full    bg-[#000000] text-white '>
         <div className='px-16 mx-auto '>
     <div className='text-[#969696] flex gap-2 sm:w-4/5 md:w-2/3 lg:w-1/3  mb-10'>
     <i className="fa-solid fa-quote-left mt-16"></i>

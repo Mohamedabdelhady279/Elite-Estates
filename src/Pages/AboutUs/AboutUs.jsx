@@ -14,28 +14,30 @@ export default function AboutUs() {
   return (
    <>
    
-  <section className='about'>
-    <section className='about_us '>
+  <section className='about '>
+
+    <section className='about_us sm:mb-16 sm:pb-16'>
     
     <div  className='about_title'>
     <h2 className='text-center '>About Us</h2>
-    <p className='text-center'>Sorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <p className='text-center sm:mt-2'>Sorem ipsum dolor sit amet, consectetur adipiscing elit.
         Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
     </p>
     </div>
-    <div className='images '>
-        <img src={img1} className='w-75'  alt="img1" />
-        <img src={img2} className='w-75'  alt="img2" />
-        <img src={img3} className='w-75'  alt="img3" />
-        <img src={img4} className='w-75'  alt="img4" />
+    <div className='images sm:mt-14 sm:invisible lg:visible'>
+        <img src={img1} className='w-1/5'  alt="img1" />
+        <img src={img2} className='w-1/5'  alt="img2" />
+        <img src={img3} className='w-1/5'  alt="img3" />
+        <img src={img4} className='w-1/5'  alt="img4" />
     </div>
 
     </section>
 
 
-    <section className='about_contact'>
-    <div className='about-contact-all flex sm:flex-col sm:flex-wrap lg:flex-row '>
-    <div className='about_contact-contant sm:w-100 lg:w-50'>
+    <section className='about_contact lg:px-16 sm:mt-16'>
+    <div className='about-contact-all flex sm:flex-col justify-between sm:flex-wrap md:flex-row px-14'>
+
+    <div className='about_contact-contant sm:w-100 md:w-1/2 pt-16'>
     <h3>ABOUT</h3>
     <h4>
         The Exclusive and 
@@ -48,10 +50,15 @@ export default function AboutUs() {
     <button className='btn'>Contact Us</button>
     </div>
 
-    <div className='about_contact-images sm:w-100 lg:w-50'>
+    <div className='about_contact-images flex gap-2 sm:w-100 h-[400px] md:w-1/2 relative sm:mt-16'>
+    <div  className='w-4/9 absolute left-14'>
     <img className='img_contact1' src={imgContact1} alt="" />
-    <img className='img_contact2' src={imgContact2} alt="" />
     </div>
+     <div className='w-4/9 absolute -top-14 sm:right-12 lg:right-0'>
+     <img className='img_contact2' src={imgContact2} alt="" />
+     </div>
+    </div>
+
     </div>
     </section>
 
@@ -61,32 +68,35 @@ export default function AboutUs() {
 
 
 
-    <section className='about_vision'>
-        <h3>Commitment</h3>
-        <h4>Our Vision</h4>
-        <div className=' flex justify-between items-center '>
+    <section className='about_vision sm:px-8 lg:px-32'>
+    <h2 className='font-semibold mb-8 text-xl left-10 top-5 mt-6 text-[#3E3E3E] relative '> 
+    <span className='h-[2px] w-[30px] bg-[#3E3E3E] absolute top-3.5 -left-10'></span> Commitment</h2>
+       
+        <h4 className='text-2xl font-bold mb-6'>Our Vision</h4>
+        <div className=' flex justify-between items-center text-[#606060] my-6 '>
             <p>Korem ipsum dolor sit amet, consectetur <br /> adipiscing elit.Nunc vulputate libero et velit</p>
-            <button className='btn'>Learn More</button>
+            <button className='text-white bg-[#0055CD] px-5 py-2'>Learn More</button>
         </div>
-        <div className="about_vision-content flex sm:flex-col sm:flex-wrap lg:flex-row">
-            <div className="about_vision-image  sm:w-100 ">
+
+        <div className="about_vision-content flex sm:flex-col sm:flex-wrap justify-between md:flex-row mt-12 pb-8">
+            <div className="about_vision-image  sm:w-100 lg:w-1/2 align-middle">
                 <img src={imgVision} className='w-full' alt="imgVision" />
             </div>
             <div className="about_vision-info sm:w-100 ">
-                <div className="about_vision-details" >
+                <div className="about_vision-details mb-4 sm:flex flex-col sm:items-center sm:justify-center " >
                     <img src={city} alt="city" />
                     <h3>House for every one</h3>
-                    <p>Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit</p>
+                    <p className='sm:text-center'>Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit</p>
                 </div>
-                <div className="about_vision-details" >
+                <div className="about_vision-details mb-4 sm:flex flex-col sm:items-center sm:justify-center" >
                     <img src={price} alt="price" />
                     <h3>All Price</h3>
-                    <p>Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit</p>
+                    <p className='sm:text-center'>Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit</p>
                 </div>
-                <div className="about_vision-details" >
+                <div className="about_vision-details mb-4 sm:flex flex-col sm:items-center sm:justify-center" >
                     <img src={security} alt="security" />
                     <h3>secuirty</h3>
-                    <p>Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit</p>
+                    <p className='sm:text-center'>Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit</p>
                 </div>
             </div>
         </div>
