@@ -1,15 +1,34 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import Favorite from '../../assets/imgs/favorite.png';
 import { FavProductsContext } from '../../context/FavContext/FavContext';
+import {  ProductsContext } from '../../context/ProductsContext/ProductsContext';
+import ProductCard from '../ProductCard/ProductCard';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProducts } from '../../lib/ProductSlice';
 
 export default function Popular() {
   const navigate = useNavigate();
-    const {favProducts , setFavProducts} = useContext(FavProductsContext);
+  // const {products} = useContext(ProductsContext);
+  
+let dispatch = useDispatch();
+const {products} = useSelector((state)=> state.products);
+let y = products.data;
+let x = useSelector((state)=>{state.products});
+// const {products} = useContext(ProductsContext );
+console.log(products);
 
-    function addToFavorites(){
-     let newFav = favProducts.puch(item)
-    }
+useEffect(()=>{
+   dispatch(fetchProducts())
+},[])
+
+
+  console.log(products);
+  
+
+  let popularProducts = products.data.filter((product)=> product.price > 500000);
+  console.log(popularProducts);
+  
 
   return (
    <>

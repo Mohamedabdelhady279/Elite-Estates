@@ -273,3 +273,17 @@ background-image: url('https://s3-alpha-sig.figma.com/img/fc8f/3d6e/5ecb3905e48f
 background-size: cover;
 background-position:top 25% ;
 }
+
+/* .profile{
+  clip-path: polygon(0px 0px, calc( 100% - 2px) 0px, 100% 50px, calc( 100% - 1px) calc( 100% - 4px), calc( 100% - 171px) calc( 110% - 44px), 153px calc( 100% - 41px), 0px 100%, 0px 50px);
+} */
+
+.profile {
+  /* clip-path: polygon(
+    0% 0%, 
+    100% 0%, 
+    100% 85%,  /* Lower the bottom-right to curve */
+   /* 50% 100%,  /* Center bottom curve */
+   /* 0% 85% /* Lower the bottom-left to curve 
+  ); */
+} 

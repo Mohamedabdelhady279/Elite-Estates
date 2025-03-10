@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import heartIcon from '../../assets/imgs/Heart.png';
 import shareIcon from '../../assets/imgs/Share 2.png';
 import CheckMark from '../../assets/imgs/Check Mark.png';
@@ -16,12 +16,29 @@ import person4 from '../../assets/imgs/Ellipse 1 (3).png';
 import star from '../../assets/imgs/Star 1.png'
 import { BackgroundContext } from '../../context/BackrgroundContext/BackrgroundContext';
 import Navbar from '../Navbar/Navbar';
-
+import { ProductsContext } from '../../context/ProductsContext/ProductsContext';
+import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProducts } from '../../lib/ProductSlice';
 
 
 export default function ProductDetails() {
     const {backgroundColor , setBackgroundColor} = useContext(BackgroundContext);
-    // setBackgroundColor('bg-[#25356b]')
+    // const {products} = useContext(ProductsContext);
+
+    let dispatch = useDispatch();
+const {products} = useSelector((state)=> state.products);
+let y = products.data;
+let x = useSelector((state)=>{state.products});
+// const {products} = useContext(ProductsContext );
+console.log(products);
+
+useEffect(()=>{
+   dispatch(fetchProducts())
+},[])
+
+    let {id} = useParams();
+    let selectedProduct = products.data.find((product)=>product.id === id)
 
   return (
    <>
@@ -46,7 +63,7 @@ export default function ProductDetails() {
     
 <div className="grid sm:grid-cols-7 md:grid-cols-7 lg:grid-cols-5 grid-rows-6 gap-2 sm:w-full lg:w-3/4 mx-auto h-[600px] mt-12 sm:">
     <div className="lg:col-span-3 lg:row-span-6 sm:col-span-7 sm:row-span-3  md:row-span-3   ">
-        <img className='h-full w-full rounded-xl' src="https://s3-alpha-sig.figma.com/img/2a5f/ecfc/aaf5184a12f28c9709da499927871f12?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=uY4ZB6EmG~0V1ppl62rQ3Pr92FJj9y5zE35NfcSZPHswqca7hQdamHOAbhIfChRyWMLQtSOku5yGbBriRYoUlnuxV2HdtLBD8mtFBNX8I8eDDSRCRj08oO-J6DcuPvTrCpUDRaD4ezZ8glztn~dzRjKOgeKokDREKFUj1Fm~HU8PszoWYTiQkdhr7BzOYo-Qf-viNcF1tGwiFc6Ke6GaXTqRrgJuM~45Rftceu77dH~oeMshKdyKOhfXox1BgwFFv35LXi9aewTY3Z88Pe8OIRE8tx13USxKFXJaLH2IzAijKcyhowhiKwpM1wK3TSVayLR0hdzS0llyIHV1fvNAKA__" alt="" />
+        <img className='h-full w-full rounded-xl' src={selectedProduct.image} alt="" />
     </div>
     <div className="lg:col-span-2 lg:row-span-3 col-start-4 sm:col-span-7 sm:row-span-2 md:row-span-3 md:col-span-3">
        <img className='h-full w-full rounded-xl' src="https://s3-alpha-sig.figma.com/img/d8f3/66f5/dffd0a968a456e6c8a57076b1e6bb596?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=ZKLtvkfmk5AJUpFJXKlNMrM-0ugpTCTvnMHkCOdpR2CURPiE1BVAPI2tpdmPH8TC41nOMNA5hrOgwDfwGgEte79prjF600Y2PhFB4tFlY1YVdgV1-7ZUxSw99lKWDSLO9KWvWcuuiBQzdYAfwj40ATBhvpGoK7NPh38T1xFqeWpepMYLG0SScFDidk7FCZzFxPfUKNX4CwGvx9Y1M35nL~MY3vbwlYrSw4Eqhw0PZIjJGSRjmOPznB4skCcQdkJZs2aRu3zzzRyBYxM8LwKYPCgHZ1QyZMH8nnhlpFLsu~6vL~ewuxm2GhkmHW1llf1VyjVZ~r-11mzsaDhtO0PJnw__" alt="" />

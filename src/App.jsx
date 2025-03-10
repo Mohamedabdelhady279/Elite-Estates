@@ -17,6 +17,8 @@ import axios from 'axios'
 import FilteredProducts from './Pages/FilteredProducts/FilteredProducts'
 import Properities from './Pages/Properities/Properities'
 import AuthView from './Pages/Authpages/AuthView'
+import Profile from './Pages/Profile/Profile'
+import ProductProvider from './context/ProductsContext/ProductsContext'
 
 
 
@@ -38,16 +40,19 @@ function App() {
         {path:'properities' ,element:<Properities/>},
         {path:'Authpage' ,element:<AuthView />},
 
+        {path:'profile' ,element:<Profile/>},
+    
       ]
     }
   ])
   return (
     <>
     {/* <Navbar />  */}
+    <ProductProvider>
     <FavProductsProvider>
       <RouterProvider router={routes} ></RouterProvider> 
     </FavProductsProvider>
-   
+   </ProductProvider>
     
 
       {/* <Home  />
