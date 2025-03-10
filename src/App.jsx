@@ -16,6 +16,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import FilteredProducts from './Pages/FilteredProducts/FilteredProducts'
 import Properities from './Pages/Properities/Properities'
+import Profile from './Pages/Profile/Profile'
 
 
 
@@ -35,6 +36,7 @@ function App() {
         {path:'filteredproducts' ,element:<FilteredProducts />},
         {path:'products/:id' ,element:<ProductDetails />},
         {path:'properities' ,element:<Properities/>},
+        {path:'profile' ,element:<Profile/>},
     
       ]
     }

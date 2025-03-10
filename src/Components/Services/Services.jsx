@@ -4,8 +4,8 @@ export default function Services() {
   return (
     <>
     <div className=' px-16 mb-6 mx-auto pt-10 my-20 relative'>
-    <h2 className='text-[#3E3E3E] uppercase absolute mb-2 -top-10 right-12 font-semibold '>   Our service</h2>
-    <span className='h-[2px] w-[40px] bg-[#3E3E3E] absolute -top-7 right-0'></span>
+    <h2 className='text-[#3E3E3E] uppercase absolute mb-2 -top-10 right-12 font-semibold px-16 '>   Our service</h2>
+    <span className='h-[2px] w-[40px] bg-[#3E3E3E] absolute -top-7 right-16'></span>
       
 
     <div className='grid grid-cols-12 gap-8 mt-2'>

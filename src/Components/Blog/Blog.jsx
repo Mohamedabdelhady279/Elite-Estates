@@ -2,12 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import likeIcon from '../../assets/imgs/Like.png'
 
+
 export default function Blog() {
   return (
    <>
    <div className='mt-12 px-16 mx-auto py-12 my-20  relative bottom-20  sm:pt-16 '>
-   <h2 className='text-[#3E3E3E] mb-6 uppercase absolute left-10 top-0 sm:mt-12 sm:mb-8  '>Our blog  <span className='h-[2px] w-[40px] bg-[#3E3E3E] absolute top-3 -left-11'></span></h2>
-   <div className='flex justify-between mb-4'>
+   <h2 className='font-semibold mb-4 text-xl left-10 top-5 mt-6 text-[#3E3E3E] relative '> 
+   <span className='h-[2px] w-[30px] bg-[#3E3E3E] absolute top-3.5 -left-10'></span> Our Blog</h2>
+     <div className='flex justify-between mb-4'>
     <p className='text-2xl'>Latest Trends</p>
     <Link className='text-[#606060]'>See All <span><i class="fa-solid fa-arrow-right"></i></span> </Link>
     </div>
