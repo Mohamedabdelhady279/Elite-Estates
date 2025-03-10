@@ -7,6 +7,8 @@ import Favorite from '../../assets/imgs/favorite.png';
 
 
 export default function Profile() {
+
+  
   return (
     <>
     <div className="profile bg-[#AEC6E8] h-[656px] relative mb-8 ">

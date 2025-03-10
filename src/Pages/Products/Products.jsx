@@ -1,32 +1,29 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import ProductCard from '../../Components/ProductCard/ProductCard';
+import {  ProductsContext } from '../../context/ProductsContext/ProductsContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProducts } from '../../lib/ProductSlice';
 
 export default function Products() {
-   const [products ,setProducts] = useState([]);
-    async function getProducts(){
-     
-        const options={
-            url:'http://localhost:3000/listings',
-            method:'GET',
-        }
 
-    let {data} = await axios.request(options);
-    setProducts(data);
-    console.log(data);
-    
-    }
+let dispatch = useDispatch();
+const {products} = useSelector((state)=> state.products);
+let y = products.data;
+let x = useSelector((state)=>{state.products});
+// const {products} = useContext(ProductsContext );
+console.log(products);
 
-    useEffect(()=>{
-        getProducts();
-    },[])
+useEffect(()=>{
+   dispatch(fetchProducts())
+},[])
+
 
   return (
 
     <>
     <div className='grid grid-cols-12 px-16 pt-14 gap-2'>
-        {products ? 
-        products.map((product)=>(
+        {products.data ? 
+        products.data.map((product)=>(
             <ProductCard key={product.id} productInfo={product} />
         )
         ) 
@@ -35,3 +32,4 @@ export default function Products() {
     </>
   )
 }
+

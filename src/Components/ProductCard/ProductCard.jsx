@@ -7,7 +7,7 @@ export default function ProductCard({productInfo}) {
   return (
    <>
   
-   <Link to={`/products/${productInfo.id}`} className='sm:col-span-12 md:col-span-6 lg:col-span-3 xl:col-span-4 2xl:col-span-2'>
+   <Link to={`/products/${productInfo.id}`} className='sm:col-span-12 md:col-span-6 lg:col-span-4 '>
     <div className='relative'>
      <img className='h-[302px] w-full' src={image} alt="" />
    <div className='absolute top-2 right-2 w-[45px] h-[45px]'><img  src={Favorite} alt="" /></div>

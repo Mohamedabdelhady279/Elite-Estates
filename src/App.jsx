@@ -17,6 +17,7 @@ import axios from 'axios'
 import FilteredProducts from './Pages/FilteredProducts/FilteredProducts'
 import Properities from './Pages/Properities/Properities'
 import Profile from './Pages/Profile/Profile'
+import ProductProvider from './context/ProductsContext/ProductsContext'
 
 
 
@@ -44,10 +45,11 @@ function App() {
   return (
     <>
     {/* <Navbar />  */}
+    <ProductProvider>
     <FavProductsProvider>
       <RouterProvider router={routes} ></RouterProvider> 
     </FavProductsProvider>
-   
+   </ProductProvider>
     
 
       {/* <Home  />
