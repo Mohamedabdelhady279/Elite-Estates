@@ -1,16 +1,33 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Favorite from '../../assets/imgs/favorite.png';
-
+import { useDispatch } from 'react-redux';
+import { addFavorite } from '../../store/Shopping/favoritesSlice';
 export default function ProductCard({productInfo}) {
     let {title,price,image ,currency ,location} = productInfo;
+        let {title,price,image ,currency ,location} = productInfo;
+          const dispatch = useDispatch();
+    
+      const handleAddToFavorites = () => {
+        const item = {
+          title,
+          price,
+          image,
+          currency,
+          location
+        };
+        
+        dispatch(addFavorite(item));
+      };
   return (
    <>
   
    <Link to={`/products/${productInfo.id}`} className='sm:col-span-12 md:col-span-6 lg:col-span-4 '>
     <div className='relative'>
      <img className='h-[302px] w-full' src={image} alt="" />
-   <div className='absolute top-2 right-2 w-[45px] h-[45px]'><img  src={Favorite} alt="" /></div>
+    <div className='absolute top-2 right-2 w-[45px] h-[45px] p-1 rounded-full hover:bg-blue-700 cursor-pointer transition-colors'>
+      <img src={Favorite} className='w-full h-full object-contain' onClick={handleAddToFavorites} alt="" />
+    </div>
    </div>
 
       <div className='flex gap-2 items-center'>
