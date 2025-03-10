@@ -69,7 +69,7 @@ export default function Navbar() {
        <NavLink className={({isActive})=>` before:w-0 text-white ${isActive ? 'font-bold text-blue-200 before:absolute before:w-full hover:w-full before:transition-[width] before:duration-500 before:h-[2px] before:bg-white before:left-0 before:bottom-0  ':' hover:text-gray-200' }`} to='/agents'>Agents</NavLink>
        </li>
        <li className='relative'>
-        <NavLink className={({isActive})=>` before:w-0 text-white ${isActive ? 'font-bold text-blue-200 before:absolute before:w-full hover:w-full before:transition-[width] before:duration-500 before:h-[2px] before:bg-white before:left-0 before:bottom-0  ':' hover:text-gray-200' }`} to='/login'>Login</NavLink>
+        <NavLink className={({isActive})=>` before:w-0 text-white ${isActive ? 'font-bold text-blue-200 before:absolute before:w-full hover:w-full before:transition-[width] before:duration-500 before:h-[2px] before:bg-white before:left-0 before:bottom-0  ':' hover:text-gray-200' }`} to='/Authpage'>Login</NavLink>
        </li>
 
      </ul>

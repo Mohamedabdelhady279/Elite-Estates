@@ -16,6 +16,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import FilteredProducts from './Pages/FilteredProducts/FilteredProducts'
 import Properities from './Pages/Properities/Properities'
+import AuthView from './Pages/Authpages/AuthView'
 
 
 
@@ -35,7 +36,8 @@ function App() {
         {path:'filteredproducts' ,element:<FilteredProducts />},
         {path:'products/:id' ,element:<ProductDetails />},
         {path:'properities' ,element:<Properities/>},
-    
+        {path:'Authpage' ,element:<AuthView />},
+
       ]
     }
   ])
