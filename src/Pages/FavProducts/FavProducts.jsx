@@ -1,9 +1,14 @@
-import React from 'react'
-import Search from './../../Components/Search/Search';
+import React from 'react';
+ 
 
-export default function FavProducts() {
+const FavProducts = () => {
+ 
+  
+ 
+
   return (
-    <>
-    </>
-  )
-}
+  
+  );
+};
+
+export default FavProducts;
