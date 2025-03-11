@@ -1,9 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Services() {
+  const navigate = useNavigate();
   return (
     <>
-    <div className=' px-16 mb-6 mx-auto pt-10 my-20 relative'>
+    <div className=' px-16  mx-auto pt-10 my-20 relative mb-[400px]'>
     <h2 className='text-[#3E3E3E] uppercase absolute mb-2 -top-10 right-12 font-semibold px-16 '>   Our service</h2>
     <span className='h-[2px] w-[40px] bg-[#3E3E3E] absolute -top-7 right-16'></span>
       
@@ -35,7 +37,9 @@ export default function Services() {
                     <p className='text-[#000000]'>Royal Areas</p>
                  </div>
                 </div>
-                <button className='text-white bg-[#0055CD] rounded-xs w-fit px-4 py-2 cursor-pointer'>Explore Services</button>
+                <button
+                onClick={()=>navigate('/properities')}
+                className='text-white bg-[#0055CD] rounded-xs w-fit px-4 py-2 cursor-pointer'>Explore Services</button>
         </div>
     </div>
     </div>

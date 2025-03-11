@@ -19,6 +19,7 @@ import Properities from './Pages/Properities/Properities'
 import AuthView from './Pages/Authpages/AuthView'
 import Profile from './Pages/Profile/Profile'
 import ProductProvider from './context/ProductsContext/ProductsContext'
+import BackgroundProvider from './context/BackrgroundContext/BackrgroundContext'
 
 
 
@@ -49,9 +50,11 @@ function App() {
     <>
     {/* <Navbar />  */}
     <ProductProvider>
+      <BackgroundProvider>
     <FavProductsProvider>
       <RouterProvider router={routes} ></RouterProvider> 
     </FavProductsProvider>
+    </BackgroundProvider>
    </ProductProvider>
     
 

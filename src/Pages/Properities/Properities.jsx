@@ -4,11 +4,14 @@ import villa from '../../assets/imgs/Villa.png';
 import real from '../../assets/imgs/Real.png';
 import location from '../../assets/imgs/location.png';
 import land from '../../assets/imgs/land.png';
+import Navbar from '../../Components/Navbar/Navbar';
 
 export default function Properities() {
   return (
     <>
+  
     <div className='bgprop  min-w-screen min-h-[1400px] p-14 mt-2 relative'>
+        <Navbar />
         <h2 className='text-center text-white text-2xl font-semibold  mt-12'>Types Of Properties</h2>
           <div className='flex sm:flex-col sm:flex-wrap  md:flex-row lg:flex-nowrap lg:justify-between w-3/4 mx-auto pt-28 sm:pb-14'>
             <div className='sm:h-[250px] md:w-1/3 lg:h-[458px] flex flex-col items-center rounded-tl-full rounded-tr-full w-[179px] px-2 pt-8 sm:bg-transparent lg:bg-[#6666661A]'>

@@ -26,8 +26,7 @@ useEffect(()=>{
   console.log(products);
   
 
-  let popularProducts = products?.data?.filter((product) => product.price > 500000) || [];
-
+  let popularProducts =  products.data? products.data.filter((product)=> product.price > 500000) : [] ;
   console.log(popularProducts);
   
 

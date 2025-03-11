@@ -1,30 +1,43 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Favorite from '../../assets/imgs/favorite.png';
- 
+import { useDispatch } from 'react-redux'; 
+import { addFavorite } from '../../lib/favoritesSlice'; 
+
 export default function ProductCard({productInfo}) {
     let {title,price,image ,currency ,location} = productInfo;
- 
-     
+    const dispatch = useDispatch(); 
+    const handleAddToFavorites = () => { 
+      const item = { 
+        title, 
+        price, 
+        image, 
+        currency, 
+        location 
+      }; 
+       
+      dispatch(addFavorite(item)); 
+    }; 
+
   return (
    <>
   
-   <Link to={`/products/${productInfo.id}`} className='sm:col-span-12 md:col-span-6 lg:col-span-4 '>
-    <div className='relative'>
+   <div className='sm:col-span-12 md:col-span-6 lg:col-span-4 bg-white '>
+    <div className='relative '>
      <img className='h-[302px] w-full' src={image} alt="" />
-    <div className='absolute top-2 right-2 w-[45px] h-[45px] p-1 rounded-full hover:bg-blue-700 cursor-pointer transition-colors'>
-      <img src={Favorite}   alt="" />
-    </div>
+   <div 
+ onClick={handleAddToFavorites} 
+   className='absolute top-2 right-2 w-[45px] h-[45px] cursor-pointer'><img  src={Favorite} alt="" /></div>
    </div>
-
-      <div className='flex gap-2 items-center'>
+   <Link to={`/products/${productInfo.id}`}>
+      <div className='flex gap-2 items-center px-3'>
          <i className="fa-solid fa-location-dot"></i>
          <h3 className='mb-2'>{title}</h3>
       </div>
 
-      <p>Location: {location.city} - {location.state} </p>
+      <p className='px-3'>Location: {location.city} - {location.state} </p>
      
-      <div className='flex justify-between mb-2 text-[#666666]'>
+      <div className='flex justify-between mb-2 text-[#666666] px-3'>
         <div className='flex gap-1.5 items-center'>
           
           <img className='w-[20px] h-[20px]' src="https://s3-alpha-sig.figma.com/img/a652/0a27/524708a6161976debad1d56ea6151747?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Fd88JaBbpPX490XESkcvDK3UwN7tOZVFZaOUo1Cxeb6FLTS5NC~asFH19zz~-hzQOGNfdIL3E7cKtf0Zg~CYwmeVyNCaGkUHiqMMk4S8s7xMAdAUlbbG7TBNXrq2hSuZm7r1er-54SO4SyBdHkC28bEUqF7vnWynv-YHJoEI4vCUIeWfx-FCTg8uX0iCXU8T0-lxjIP8b7e3gAeoCcE~7EmJmyjU4sOYfyblkYUPa1MB0XbGqmgq6vJjDzmfLgPzffME2gCGWvt5TTjW8DFTkSV2VU9c32THMHedwmYkK8KflUGAOrdrGUNgEJtkv6jUnABn7uUMYePeMvcFcNtHrQ__" alt="" />
@@ -39,12 +52,12 @@ export default function ProductCard({productInfo}) {
           <p>1600 m</p>
         </div>
       </div>
-      <div className='flex justify-between font-bold'>
+      <div className='flex justify-between font-bold px-3'>
         <button className='bg-[#1E1E1E] text-white w-fit px-4 py-1 rounded-xs mb-8 cursor-pointer '>Book Now</button>
         <p className='text-[#000000]'>{price} {currency}</p>
       </div>
     </Link>
-
+</div>
    </>
   )
 }
