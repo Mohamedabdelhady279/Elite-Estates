@@ -1,19 +1,4 @@
-<<<<<<< HEAD
-import React from 'react';
- 
 
-const FavProducts = () => {
- 
-  
- 
-
-  return (
-  
-  );
-};
-
-export default FavProducts;
-=======
 import React from 'react'; 
 import { useSelector} from 'react-redux'; 
   
@@ -98,4 +83,4 @@ pointer '>Book Now</button>
   ); 
 }; 
 export default FavProducts;
->>>>>>> 69b4a97 (edit navbar)
+

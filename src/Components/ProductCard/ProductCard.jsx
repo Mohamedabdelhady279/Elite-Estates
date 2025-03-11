@@ -1,13 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Favorite from '../../assets/imgs/favorite.png';
-<<<<<<< HEAD
- 
-export default function ProductCard({productInfo}) {
-    let {title,price,image ,currency ,location} = productInfo;
- 
-     
-=======
 import { useDispatch } from 'react-redux'; 
 import { addFavorite } from '../../lib/favoritesSlice'; 
 
@@ -26,22 +19,15 @@ export default function ProductCard({productInfo}) {
       dispatch(addFavorite(item)); 
     }; 
 
->>>>>>> 69b4a97 (edit navbar)
   return (
    <>
   
    <div className='sm:col-span-12 md:col-span-6 lg:col-span-4 bg-white '>
     <div className='relative '>
      <img className='h-[302px] w-full' src={image} alt="" />
-<<<<<<< HEAD
-    <div className='absolute top-2 right-2 w-[45px] h-[45px] p-1 rounded-full hover:bg-blue-700 cursor-pointer transition-colors'>
-      <img src={Favorite}   alt="" />
-    </div>
-=======
    <div 
  onClick={handleAddToFavorites} 
    className='absolute top-2 right-2 w-[45px] h-[45px] cursor-pointer'><img  src={Favorite} alt="" /></div>
->>>>>>> 69b4a97 (edit navbar)
    </div>
    <Link to={`/products/${productInfo.id}`}>
       <div className='flex gap-2 items-center px-3'>
