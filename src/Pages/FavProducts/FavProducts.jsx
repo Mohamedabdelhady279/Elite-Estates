@@ -1,14 +1,11 @@
-import React from 'react';
- 
+import React from 'react'
 
 const FavProducts = () => {
- 
-  
- 
-
   return (
-  
-  );
-};
+    <div>
+      asdasd
+    </div>
+  )
+}
 
-export default FavProducts;
+export default FavProducts
