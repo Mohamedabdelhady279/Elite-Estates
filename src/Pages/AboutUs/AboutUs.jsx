@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import img1 from '../../assets/imgs/Vector.png';
 import img2 from '../../assets/imgs/Vector (1).png';
 import img3 from '../../assets/imgs/Vector (2).png';
@@ -9,13 +9,23 @@ import imgVision from '../../assets/imgs/Rectangle 4.png'
 import city from '../../assets/imgs/City Block.png'
 import price from '../../assets/imgs/Dollar Bag.png'
 import security from '../../assets/imgs/Security Shield.png'
+import { BackgroundContext } from '../../context/BackrgroundContext/BackrgroundContext';
+import Navbar from '../../Components/Navbar/Navbar';
 
 export default function AboutUs() {
+    const {backgroundColor ,setBackgroundColor} = useContext(BackgroundContext);
+    
+
+    useEffect(()=>{
+ setBackgroundColor('#FFFFFF2B');
+    },[])
+   
+
   return (
    <>
    
   <section className='about '>
-
+<Navbar backgroundColor={backgroundColor} />
     <section className='about_us sm:mb-16 sm:pb-16'>
     
     <div  className='about_title'>

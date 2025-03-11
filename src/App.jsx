@@ -18,6 +18,7 @@ import FilteredProducts from './Pages/FilteredProducts/FilteredProducts'
 import Properities from './Pages/Properities/Properities'
 import Profile from './Pages/Profile/Profile'
 import ProductProvider from './context/ProductsContext/ProductsContext'
+import BackgroundProvider from './context/BackrgroundContext/BackrgroundContext'
 
 
 
@@ -46,9 +47,11 @@ function App() {
     <>
     {/* <Navbar />  */}
     <ProductProvider>
+      <BackgroundProvider>
     <FavProductsProvider>
       <RouterProvider router={routes} ></RouterProvider> 
     </FavProductsProvider>
+    </BackgroundProvider>
    </ProductProvider>
     
 

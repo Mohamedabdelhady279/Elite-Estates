@@ -11,8 +11,10 @@ export default function Profile() {
   
   return (
     <>
-    <div className="profile bg-[#AEC6E8] h-[656px] relative mb-8 ">
-     <div className='sm:w-[250px] lg:w-[394px] sm:h-[250px] md:h-[300px] md:w-[300px] md:-bottom-[150px] md:left-[300px] lg:h-[394px] rounded-md absolute sm:-bottom-[125px] lg:-bottom-[198px] sm:left-[130px] lg:left-[559px] border-3 border-blue-600'>
+
+    <div className=''>
+    <div className="profile relative  bg-[#AEC6E8] h-[656px]  mb-8 rounded-bl-[-50px]">
+     <div className='sm:w-[250px] lg:w-[394px] sm:h-[250px] md:h-[300px] md:w-[300px] md:-bottom-[150px] md:left-[300px] lg:h-[394px] rounded-md absolute sm:-bottom-[125px] lg:-bottom-[98px] sm:left-[130px] lg:left-[559px] border-3 border-blue-600'>
         <div className='text-center mb-6' >
             <img className='w-full h-full rounded-md' src='https://s3-alpha-sig.figma.com/img/833b/fcf2/fbdf822af730dc5a309217c373e76ab9?Expires=1742774400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=fIhHhX1B~92nfteVTN~VwXvdcyoI~On7ZqEA48OiQkAJJ9wW4ni-Bly5UOYH-bkUg2MHAuLPqU2jl3fDfBhN1qKgZwB1yCOWZehF4nAI6YQY~cRufYj47GvPOr3FBCsP-kTIYNpMVjb8HNLzxiQ-GlM2XHP6nF78pXQkXsM9gfbsgcGJwBuV9Ndw078SZtyBqIqWzgpwJjbhHDQLz3r0wXT7Xwl-qAFe6i98BcDm0gmGVt5XtNbpbJ0M-2u-wTYKMjx0KTPKEHNgFI9XEyH4lbHJS~9wSbCsuftK4173Q-IgLIOFCtoK5-78Rh6R7ZEwzIHzfMf8yxP4y5dgx1xtxg__' alt="" />
             <img className='absolute top-5 right-5 cursor-pointer' src={profile} alt="" />
@@ -20,7 +22,7 @@ export default function Profile() {
         <h3 className='text-center text-[#000000] text-2xl font-bold'>Jocelyn Figueroa</h3>
      </div>
     </div>
-
+</div>
     <div className='grid grid-cols-12 gap-2 mt-[300px] px-16 mb-8'>
    <div className='sm:col-span-12 md:col-span-8 l:col-span-9 '>
    <h2 className='font-semibold text-xl left-10 top-5 mt-6 text-[#3E3E3E] relative mb-8'> 

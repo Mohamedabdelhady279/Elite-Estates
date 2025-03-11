@@ -38,12 +38,12 @@ useEffect(()=>{
 },[])
 
     let {id} = useParams();
-    let selectedProduct = products.data.find((product)=>product.id === id)
+    let selectedProduct =products.data? products.data.find((product)=>product.id === id) : '';
 
   return (
    <>
    <Navbar backgroundColor={backgroundColor} />
-<div className='bg-gray-200 pt-14'>
+<div className='bg-gray-200 pt-14 relative'>
     <div className=' mx-auto sm:px-16'>
     <h2 className='text-[#000000] mb-3 font-semibold'>St. Crystal</h2>
     <div className='flex sm:flex-col sm:flex-wrap sm:gap-4 lg:flex-row lg:flex-nowrap justify-between mb-4'>
@@ -130,7 +130,7 @@ useEffect(()=>{
     </div>
 
 
-    <div className='flex gap-1 mt-12 sm:flex-col sm:flex-wrap lg:flex-row lg:flex-nowrap lg:gap-4'>
+    <div className='flex gap-1 mt-12 sm:flex-col sm:flex-wrap lg:flex-row lg:flex-nowrap lg:gap-4 pb-[380px]'>
         <div className='sm:w-100 lg:w-3/4 sm:mb-4'>
        
        <div className='w-full mx-auto'>
@@ -191,7 +191,11 @@ useEffect(()=>{
 
 
 </div>
+
+<div className='absolute left-0 z-50 -bottom-60  '>
     <Popular />
+    </div>
+
     </div>
     </div>
    </>

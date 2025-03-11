@@ -32,8 +32,8 @@ export default function Navbar() {
   return (
     <div
       className={`fixed px-16 top-0 left-0 right-0 z-10 w-full ${isMobileMenuOpen ? "sm:h-[100px] "  : "sm:h-[330px]"}  lg:h-[80px] transition-all duration-500 ${
-        isScrolled ? "bg-[#25356b]" : 'bg-[#25356b]'
-      } text-white`}
+        isScrolled} ? "bg-[#25356b]" : ${backgroundColor}
+       text-white`}
     >
       <div className={`px-16 mx-auto flex sm:flex-col sm:flex-wrap sm:px-10 sm:items-start sm:gap-4 lg:flex-row lg:flex-nowrap 
        justify-between items-center py-6 ${isMobileMenuOpen? '': ''} `}>
