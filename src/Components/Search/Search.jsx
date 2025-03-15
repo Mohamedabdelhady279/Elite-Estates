@@ -1,12 +1,20 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import ProductCard from '../ProductCard/ProductCard';
+import { useNavigate } from 'react-router-dom';
+import SearchResult from '../../Pages/SearchResult/SearchResult';
 
 export default function Search() {
   const [budget ,setBudget] = useState(0);
   const [location , setLocation] = useState('');
   const [type , setType] = useState('');
+  const [isClicked ,setIsClicked] = useState(false);
 
+  const toggleClick = () =>{
+    setIsClicked(!isClicked);
+  }
+
+ const navigate = useNavigate();
 
   const [searchedProducts,setSearcedData] = useState([]);
   async function searchProducts(){
@@ -22,6 +30,7 @@ setSearcedData(filtered)
 console.log(data);
 console.log(filtered);
 console.log(888888888888888888);
+// navigate('/searchresult')
     }catch(error){
         console.log(error);
         
@@ -40,6 +49,7 @@ const handleSearch = () => {
 // setBudget({budget});
 //     setLocation({location});
 //     setType({type});
+ 
    searchProducts();
 };
 
@@ -48,7 +58,7 @@ const handleSearch = () => {
 
   return (
     <>
-
+<div className='relative'>
     <div className='bg-white shadow-2xl w-full mx-auto p-8  '>
         <p className='mb-4'>Search for available properties</p>
         <div className='grid grid-cols-12 gap-2 w-[80%] mx-auto '>
@@ -94,7 +104,11 @@ const handleSearch = () => {
         </div>
     </div>
 
-    <div className='grid grid-cols-12 gap-2 mt-14 w-[1350px] mx-auto'>
+    <div className={`${searchedProducts.length > 0 ? 'grid' : 'hidden'}  grid grid-cols-12 gap-2 mt-14 shadow-2xl w-full mx-auto bg-white p-6 rounded-md z-30 absolute top-34 ${isClicked === true ? 'hidden' :'grid' }`}>
+    <button onClick={toggleClick} className="flex cursor-pointer absolute top-4 right-6" 
+    >
+        <i  className=  {` text-2xl fa-solid fa-circle-xmark ${isClicked ? 'hidden' :'grid' }`} ></i>
+        </button>
         {searchedProducts? searchedProducts.map((product)=>(
          <ProductCard key={product.id} productInfo={product} />
         )
@@ -103,6 +117,21 @@ const handleSearch = () => {
 
     </div>
     
+   </div>
     </>
   )
 }
+
+
+{/* <div className={` ${searchProducts? 'hidden' :'grid'} grid grid-cols-12 gap-2 mt-14 shadow-2xl w-full mx-auto bg-white p-6 rounded-md z-30 absolute top-34 ${isClicked === false ? 'hidden' :'grid' } `}>
+<button onClick={toggleClick} className="flex cursor-pointer absolute top-4 right-6" 
+>
+    <i  className=  " text-2xl fa-solid fa-circle-xmark " ></i>
+    </button>
+    {searchedProducts? searchedProducts.map((product)=>(
+     <ProductCard key={product.id} productInfo={product} />
+    )
+   
+    ) : <h2>Loading...</h2>}
+
+</div> */}

@@ -7,11 +7,13 @@ import Favorite from '../../assets/imgs/favorite.png';
 
 
 export default function Navbar({ disableScroll = false }  ) {
+
+  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
   const {backgroundColor ,setBackgroundColor} = useContext(BackgroundContext);
   const [isMobileMenuOpen ,setIsMobileMenuOpen] = useState(false);
  
-  const navigate = useNavigate();
+  
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -32,17 +34,20 @@ export default function Navbar({ disableScroll = false }  ) {
 
   return (
     <div
-    className={`fixed px-16 top-0 left-0 right-0 z-50 w-full transition-all duration-500 ${navBgColor} text-white`}
-  >
-      <div className={`px-16 mx-auto flex sm:flex-col sm:flex-wrap sm:px-10 sm:items-start sm:gap-4 md:gap-1 lg:gap-2 md:flex-row lg:flex-nowrap 
+      className={`fixed lg:px-16 top-0 left-0 right-0 z-50 w-full ${isMobileMenuOpen ? "sm:h-[120px] "  : "sm:h-[330px]"}  md:h-[80px] transition-all duration-500 ${
+        isScrolled} ? "bg-transparent text-black" : ${backgroundColor}
+       text-white`}
+    >
+      <div className={`px-16 mx-auto flex sm:flex-col sm:flex-wrap sm:px-5 sm:items-start sm:gap-4 md:gap-1 lg:gap-2 md:flex-row lg:flex-nowrap 
        justify-between items-center py-6 ${isMobileMenuOpen? '': ''} `}>
-        <Link to='/' className="logo flex gap-2 relative">
+        <Link to='/' className="logo flex gap-2 relative sm:w-full md:w-fit">
           <img className="w-[20px] h-[20px]" src={logo} alt="" />
           <h1 className="font-bold">Elite Estates</h1>
-        <button className="flex cursor-pointer absolute -right-[340px]" aria-expanded={isMobileMenuOpen} aria-label="Toggle Navigation" onClick={toggleMobileMenu}>
+        
+        </Link>
+        <button className="flex cursor-pointer absolute right-[20px]" aria-expanded={isMobileMenuOpen} aria-label="Toggle Navigation" onClick={toggleMobileMenu}>
         <i  className={  `  text-white text-2xl fa-solid md:invisible ${isMobileMenuOpen  ? "fa-bars" : "fa-circle-xmark "} `}></i>
         </button>
-        </Link>
 
        
  <ul className={`menu flex sm:flex-col sm:flex-wrap md:flex-row md:flex-nowrap sm:gap-0.5 md:gap-1.5 lg:gap-4 font-semibold ${isMobileMenuOpen? 'sm:hidden md:flex':'flex'} `}>

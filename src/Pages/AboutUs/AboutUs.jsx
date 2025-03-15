@@ -14,26 +14,20 @@ import Navbar from '../../Components/Navbar/Navbar';
 import '../../index.css';
 import { useNavigate } from 'react-router-dom';
 export default function AboutUs() {
-    const { setBackgroundColor } = useContext(BackgroundContext);
-    const navigate = useNavigate();
+    
+    
 
-
-    useEffect(() => {
-        // عند تحميل الصفحة نغير اللون
-        setBackgroundColor('bg-[#AEC6E8]');
-        
-        // دالة التنظيف تعيد اللون الافتراضي عند مغادرة الصفحة
-        return () => {
-          setBackgroundColor('bg-[#0055CD33]'); // اللون الافتراضي المُعرف في الContext
-        };
-      }, [setBackgroundColor]);
+//     useEffect(()=>{
+//  setBackgroundColor('#FFFFFF2B');
+//     },[])
+   
 
   return (
    <>
    
-  <section className='about '>
-  <Navbar disableScroll={true} />
-  <section className='about_us sm:mb-16 sm:pb-16'>
+  <section className='about mt-0 '>
+
+    <section className='about_us sm:mb-16 sm:pb-16'>
     
     <div  className='about_title'>
     <h2 className='text-center '>About Us</h2>

@@ -33,16 +33,16 @@ export default function ProductDetails() {
   const selectedProduct = products.data ? products.data.find((product) => product.id === id) : '';
 
   return (
-    <>
-      <Navbar backgroundColor={backgroundColor} />
-      <div className='bg-gray-200 pt-14 relative'>
-        <div className='mx-auto sm:px-16'>
-          <h2 className='text-[#000000] mb-3 font-semibold'>St. Crystal</h2>
-          <div className='flex sm:flex-col sm:flex-wrap sm:gap-4 lg:flex-row lg:flex-nowrap justify-between mb-4'>
-            <p className='text-[#606060]'>210 Egypt Street , Cairo ,Fl</p>
-            <div className='flex gap-4'>
-              <button className='flex gap-1 text-[#0055CD] border border-[#0055CD] rounded-xs w-[155px] h-[35px] items-center'>
-                <img className='w-[35px] h-[25px] px-2 py-1' src={shareIcon} alt="" />
+   <>
+   <Navbar backgroundColor={backgroundColor} />
+<div className=' pt-14 relative'>
+    <div className=' mx-auto sm:px-16'>
+    <h2 className='text-[#000000] mb-3 font-semibold'>St. Crystal</h2>
+    <div className='flex sm:flex-col sm:flex-wrap sm:gap-4 lg:flex-row lg:flex-nowrap justify-between mb-4'>
+        <p className='text-[#606060]'>210 Egypt Street , Cairo ,Fl</p>
+        <div className='flex gap-4  '>
+            <button className='flex gap-1 text-[#0055CD] border-1 border-[#0055CD] rounded-xs w-[155px] h-[35px] items-center'>
+                <img className='w-[35px] h-[25px] px-2 py-1 ' src={shareIcon} alt="" />
                 <p>Share</p>
               </button>
               <button className='flex gap-1 text-[#0055CD] border border-[#0055CD] rounded-xs w-[155px] h-[35px] items-center'>

@@ -21,7 +21,7 @@ useEffect(()=>{
   return (
 
     <>
-    <div className='grid grid-cols-12 px-16 pt-14 gap-2'>
+    <div className='grid grid-cols-12 px-16 pt-24 gap-2'>
         {products.data ? 
         products.data.map((product)=>(
             <ProductCard key={product.id} productInfo={product} />
