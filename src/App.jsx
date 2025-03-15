@@ -51,7 +51,7 @@ function App() {
     {/* <Navbar />  */}
     <ProductProvider>
       <BackgroundProvider>
-    <FavProductsProvider>
+       <FavProductsProvider>
       <RouterProvider router={routes} ></RouterProvider> 
     </FavProductsProvider>
     </BackgroundProvider>

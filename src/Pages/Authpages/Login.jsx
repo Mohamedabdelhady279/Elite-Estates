@@ -154,9 +154,7 @@ const Login = () => {
         
            <div className='relative'>
         <div className='flex justify-between'>
-        <label  className="block mb-3 text-sm font-medium text-[#9F9F9F]">Password</label>
-        <NavLink to='/ForgetPassword'  className="block text-sm font-normal text-[#5193F0]">Forget Password?</NavLink >
-          
+        <label  className="block mb-3 text-sm font-medium text-[#9F9F9F]">Password</label>          
           </div>        
         <input  type={showPassword ? 'text' : 'password'} name='password' autoComplete='on'   value={formik.values.password}  onChange={formik.handleChange}  onBlur={formik.handleBlur}
 

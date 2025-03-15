@@ -11,30 +11,36 @@ import price from '../../assets/imgs/Dollar Bag.png'
 import security from '../../assets/imgs/Security Shield.png'
 import { BackgroundContext } from '../../context/BackrgroundContext/BackrgroundContext';
 import Navbar from '../../Components/Navbar/Navbar';
-
+import '../../index.css';
+import { useNavigate } from 'react-router-dom';
 export default function AboutUs() {
-    const {backgroundColor ,setBackgroundColor} = useContext(BackgroundContext);
-    
+    const { setBackgroundColor } = useContext(BackgroundContext);
+    const navigate = useNavigate();
 
-    useEffect(()=>{
- setBackgroundColor('#FFFFFF2B');
-    },[])
-   
+
+    useEffect(() => {
+        // عند تحميل الصفحة نغير اللون
+        setBackgroundColor('bg-[#AEC6E8]');
+        
+        // دالة التنظيف تعيد اللون الافتراضي عند مغادرة الصفحة
+        return () => {
+          setBackgroundColor('bg-[#0055CD33]'); // اللون الافتراضي المُعرف في الContext
+        };
+      }, [setBackgroundColor]);
 
   return (
    <>
    
   <section className='about '>
-<Navbar backgroundColor={backgroundColor} />
-    <section className='about_us sm:mb-16 sm:pb-16'>
+  <Navbar disableScroll={true} />
+  <section className='about_us sm:mb-16 sm:pb-16'>
     
     <div  className='about_title'>
     <h2 className='text-center '>About Us</h2>
-    <p className='text-center sm:mt-2'>Sorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+    <p className='text-center sm:mt-2 text-[20px] font-normal'>At [Elite Estates], we blend innovation with integrity to deliver exceptional real estate experiences. Our expertise and passion drive us to create spaces that truly feel like home.
     </p>
     </div>
-    <div className='images sm:mt-14 sm:invisible lg:visible'>
+    <div className='images  sm:invisible lg:visible'>
         <img src={img1} className='w-1/5'  alt="img1" />
         <img src={img2} className='w-1/5'  alt="img2" />
         <img src={img3} className='w-1/5'  alt="img3" />
@@ -54,13 +60,14 @@ export default function AboutUs() {
         Premium Property
     </h4>
     <p>
-        Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis Korem ipsum dolor sit amet, consectetur adipiscing elit.
-            Nunc vulputate libero et velit interdum, ac aliquet odio matti.
+    We specialize in curating exclusive, high-quality properties that meet the highest standards of luxury and functionality. Our tailored approach ensures that every home is a perfect reflection of your lifestyle and aspirations.
     </p>
-    <button className='btn'>Contact Us</button>
+    <button onClick={()=>navigate('/')} className="w-fit px-3 py-2 bg-[#0055CD] text-[#FFFFFF] border border-white rounded cursor-pointer">
+    Contact Us
+      </button>
     </div>
 
-    <div className='about_contact-images flex gap-2 sm:w-100 h-[400px] md:w-1/2 relative sm:mt-16'>
+    <div className='about_contact-images flex  gap-2 sm:w-100 h-[400px] md:w-1/2 relative sm:mt-16'>
     <div  className='w-4/9 absolute left-14'>
     <img className='img_contact1' src={imgContact1} alt="" />
     </div>
@@ -78,13 +85,13 @@ export default function AboutUs() {
 
 
 
-    <section className='about_vision sm:px-8 lg:px-32'>
+    <section className='about_vision  sm:px-8 lg:px-32'>
     <h2 className='font-semibold mb-8 text-xl left-10 top-5 mt-6 text-[#3E3E3E] relative '> 
     <span className='h-[2px] w-[30px] bg-[#3E3E3E] absolute top-3.5 -left-10'></span> Commitment</h2>
        
         <h4 className='text-2xl font-bold mb-6'>Our Vision</h4>
         <div className=' flex justify-between items-center text-[#606060] my-6 '>
-            <p>Korem ipsum dolor sit amet, consectetur <br /> adipiscing elit.Nunc vulputate libero et velit</p>
+            <p>  Our vision is to revolutionize the real estate market by crafting spaces that blend modern design with timeless elegance.</p>
             <button className='text-white bg-[#0055CD] px-5 py-2'>Learn More</button>
         </div>
 
@@ -96,17 +103,18 @@ export default function AboutUs() {
                 <div className="about_vision-details mb-4 sm:flex flex-col sm:items-center sm:justify-center " >
                     <img src={city} alt="city" />
                     <h3>House for every one</h3>
-                    <p className='sm:text-center'>Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit</p>
+                    <p className='sm:text-center'>We offer a diverse range of properties that cater to every taste and budget, ensuring a perfect home for everyone.                    </p>
                 </div>
                 <div className="about_vision-details mb-4 sm:flex flex-col sm:items-center sm:justify-center" >
                     <img src={price} alt="price" />
                     <h3>All Price</h3>
-                    <p className='sm:text-center'>Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit</p>
+                    <p className='sm:text-center'>  Our pricing is designed with clarity and honesty, providing you with complete confidence in your investment.</p>
                 </div>
                 <div className="about_vision-details mb-4 sm:flex flex-col sm:items-center sm:justify-center" >
                     <img src={security} alt="security" />
-                    <h3>secuirty</h3>
-                    <p className='sm:text-center'>Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit</p>
+                    <h3>Secuirty</h3>
+                    <p className='sm:text-center'> We prioritize your security and peace of mind, ensuring that every property meets rigorous safety standards.
+                    </p>
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@ import { BackgroundContext } from "../../context/BackrgroundContext/BackrgroundC
 import Favorite from '../../assets/imgs/favorite.png';
 
 
-export default function Navbar() {
+export default function Navbar({ disableScroll = false }  ) {
   const [isScrolled, setIsScrolled] = useState(false);
   const {backgroundColor ,setBackgroundColor} = useContext(BackgroundContext);
   const [isMobileMenuOpen ,setIsMobileMenuOpen] = useState(false);
@@ -28,13 +28,12 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  const navBgColor = disableScroll ? backgroundColor : (isScrolled ? "bg-[#25356b]" : backgroundColor);
 
   return (
     <div
-      className={`fixed px-16 top-0 left-0 right-0 z-50 w-full ${isMobileMenuOpen ? "sm:h-[120px] "  : "sm:h-[330px]"}  md:h-[80px] transition-all duration-500 ${
-        isScrolled} ? "bg-[#25356b]" : ${backgroundColor}
-       text-white`}
-    >
+    className={`fixed px-16 top-0 left-0 right-0 z-50 w-full transition-all duration-500 ${navBgColor} text-white`}
+  >
       <div className={`px-16 mx-auto flex sm:flex-col sm:flex-wrap sm:px-10 sm:items-start sm:gap-4 md:gap-1 lg:gap-2 md:flex-row lg:flex-nowrap 
        justify-between items-center py-6 ${isMobileMenuOpen? '': ''} `}>
         <Link to='/' className="logo flex gap-2 relative">

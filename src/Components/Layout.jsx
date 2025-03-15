@@ -10,7 +10,7 @@ export default function Layout() {
 
   return (
     <>
-    {/* <Navbar /> */}
+    <Navbar/>
    <div className='mt-1 sm:pt-16'> <Outlet /></div>
     <Footer />
     <ToastContainer

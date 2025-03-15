@@ -22,10 +22,7 @@ export default function Services() {
         <div className='sm:col-span-12 lg:col-span-6'>
             <h3 className='text-[#000000] text-5xl mb-8 font-bold leading-16'>Your Dream House Is
             Our Priority</h3>
-            <p className='mb-5 text-[#606060] text-sm'>Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, 
-                ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos
-                 vulputate libero et velit interdum, 
-                ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+            <p className='mb-5 text-[#606060] font-bold text-[16px]'>Home tells a unique story, and your dream deserves nothing less than perfection. At [Elite Estates], we specialize in turning visions into reality through innovative design, impeccable craftsmanship, and personalized service. Our expert team is dedicated to creating spaces that not only reflect your lifestyle but also elevate it, ensuring that every detail is crafted with precision and passion.</p>
 
                 <div className='flex justify-between mb-12 w-[70%]'>
                  <div className='flex gap-3'>
