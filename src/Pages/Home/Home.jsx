@@ -122,7 +122,7 @@ export default function Home() {
         <Popular  />
         </div>  
          <Services />
-         <div className='relative  '>
+         <div className='relative'>
          <Blog />
          </div>
     </>

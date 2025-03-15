@@ -43,7 +43,7 @@ useEffect(()=>{
   return (
    <>
    <Navbar backgroundColor={backgroundColor} />
-<div className='bg-gray-200 pt-14 relative'>
+<div className=' pt-14 relative'>
     <div className=' mx-auto sm:px-16'>
     <h2 className='text-[#000000] mb-3 font-semibold'>St. Crystal</h2>
     <div className='flex sm:flex-col sm:flex-wrap sm:gap-4 lg:flex-row lg:flex-nowrap justify-between mb-4'>

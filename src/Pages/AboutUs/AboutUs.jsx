@@ -13,19 +13,19 @@ import { BackgroundContext } from '../../context/BackrgroundContext/BackrgroundC
 import Navbar from '../../Components/Navbar/Navbar';
 
 export default function AboutUs() {
-    const {backgroundColor ,setBackgroundColor} = useContext(BackgroundContext);
+    
     
 
-    useEffect(()=>{
- setBackgroundColor('#FFFFFF2B');
-    },[])
+//     useEffect(()=>{
+//  setBackgroundColor('#FFFFFF2B');
+//     },[])
    
 
   return (
    <>
    
   <section className='about '>
-<Navbar backgroundColor={backgroundColor} />
+{/* <Navbar backgroundColor='#FFFFFF2B' /> */}
     <section className='about_us sm:mb-16 sm:pb-16'>
     
     <div  className='about_title'>

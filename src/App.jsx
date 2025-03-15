@@ -19,21 +19,24 @@ import Properities from './Pages/Properities/Properities'
 import Profile from './Pages/Profile/Profile'
 import ProductProvider from './context/ProductsContext/ProductsContext'
 import BackgroundProvider from './context/BackrgroundContext/BackrgroundContext'
+import SearchResult from './Pages/SearchResult/SearchResult'
 
 
 
 function App() {
+  const [backgroundColor , setBackgroundColor] = useState('bg-transparent');
  
 
   
   const routes= createBrowserRouter([
     {
-      path:"/" , element: <Layout /> ,children:[
+      path:"/" , element: <Layout backgroundColor={backgroundColor} setBackgroundColor={setBackgroundColor} /> ,children:[
         {index:true,element:<Home />},
         {path:'productdetails' ,element:<ProductDetails />},
         {path:'aboutus' ,element:<AboutUs />},
         {path:'favproducts' ,element:<FavProducts/>},
         {path:'products' ,element:<Products />},
+        {path:'searchResult' ,element:<SearchResult />},
         {path:'services' ,element:<Services />},
         {path:'filteredproducts' ,element:<FilteredProducts />},
         {path:'products/:id' ,element:<ProductDetails />},
@@ -45,7 +48,7 @@ function App() {
   ])
   return (
     <>
-    {/* <Navbar />  */}
+ 
     <ProductProvider>
       <BackgroundProvider>
     <FavProductsProvider>

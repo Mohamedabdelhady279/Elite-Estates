@@ -29,7 +29,7 @@ useEffect(()=>{
 
   return (
    <>
-   <div className='px-16 mx-auto py-12 my-20  absolute z-50 left-0 mt-[400px]  -bottom-80  sm:pt-16 '>
+   <div className='px-16 mx-auto py-12 my-20  lg:absolute z-50 left-0 mt-[400px]  -bottom-80  sm:pt-16 '>
    <h2 className='font-semibold mb-4 text-xl left-10 top-5 mt-6 text-[#3E3E3E] relative '> 
    <span className='h-[2px] w-[30px] bg-[#3E3E3E] absolute top-3.5 -left-10'></span> Our Blog</h2>
      <div className='flex justify-between mb-4'>
