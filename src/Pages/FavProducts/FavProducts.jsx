@@ -9,7 +9,7 @@ const FavProducts = () => {
   
  
   return ( 
-    <div className="favorites-container relative p-5"> 
+    <div className="favorites-container relative pt-14 px-16"> 
      <h2 className='font-semibold m-5  text-xl relative left-10 top-5 mt-6 text-[#3E3E3E]'>  
      <span className='h-[2px] w-[30px] bg-[#3E3E3E] absolute top-3.5 -left-10 '></span> 20 ITEMS 
      </h2> 

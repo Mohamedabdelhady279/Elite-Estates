@@ -4,7 +4,7 @@
 
 
 @theme{
-  --breakpoint-sm:380px;
+  --breakpoint-sm:280px;
   --breakpoint-md:768px;
   --breakpoint-lg:1024px;
   --breakpoint-xl:1200px;
@@ -12,6 +12,7 @@
   --breakpoint-xxxl:1600px;
   
 }
+
 
 body{
   font-family: "Poppins", sans-serif;

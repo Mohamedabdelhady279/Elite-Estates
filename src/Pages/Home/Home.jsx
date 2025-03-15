@@ -50,8 +50,8 @@ export default function Home() {
 
   return (
     <>
-    <div className='min-h-screen bg absolute top-0 left-0 right-0 z-5 '>
-        <Navbar />
+    <div className='min-h-screen bg   '>
+        {/* <Navbar /> */}
         <div className='text-white w-[1336px] mx-auto mt-20 pt-20  sm:pl-12'>
             <h2 className='text-5xl mb-8  font-bold fs-1 capitalize leading-14'>find a house <br /> that suits you </h2>
             <p className='mb-8  lg:text-left lg:w-full sm:w-3/4 '>want to fin a home? we are ready to help you find one that suits <br /> your lifestyle and needs</p>

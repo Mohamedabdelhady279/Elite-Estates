@@ -24,8 +24,8 @@ export default function AboutUs() {
   return (
    <>
    
-  <section className='about '>
-{/* <Navbar backgroundColor='#FFFFFF2B' /> */}
+  <section className='about mt-0 '>
+
     <section className='about_us sm:mb-16 sm:pb-16'>
     
     <div  className='about_title'>
