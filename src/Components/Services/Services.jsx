@@ -5,7 +5,7 @@ export default function Services() {
   const navigate = useNavigate();
   return (
     <>
-    <div className=' px-16  mx-auto pt-10 my-20 relative mb-[400px]'>
+    <div className=' px-16  mx-auto pt-10 my-40 relative mb-[400px]'>
     <h2 className='text-[#3E3E3E] uppercase absolute mb-2 -top-10 right-12 font-semibold px-16 '>   Our service</h2>
     <span className='h-[2px] w-[40px] bg-[#3E3E3E] absolute -top-7 right-16'></span>
       

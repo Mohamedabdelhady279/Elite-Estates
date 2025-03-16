@@ -42,7 +42,7 @@ export default function Home() {
         <Search />
     </div>
 
-      <div className='relative z-30 pt-[600px]'>
+      <div className='relative z-30 pt-[400px]'>
         <Popular  />
         </div>  
          <Services />

@@ -46,32 +46,27 @@ export default function Navbar({ disableScroll = false }  ) {
         
         </Link>
         <button className="flex cursor-pointer absolute right-[20px]" aria-expanded={isMobileMenuOpen} aria-label="Toggle Navigation" onClick={toggleMobileMenu}>
-        <i  className={  `  text-white text-2xl fa-solid md:invisible ${isMobileMenuOpen  ? "fa-bars" : "fa-circle-xmark "} `}></i>
+        <i  className={  `text-2xl fa-solid md:invisible ${isMobileMenuOpen  ? "fa-bars" : "fa-circle-xmark "} `}></i>
         </button>
 
        
  <ul className={`menu flex sm:flex-col sm:flex-wrap md:flex-row md:flex-nowrap sm:gap-0.5 md:gap-1.5 lg:gap-4 font-semibold ${isMobileMenuOpen? 'sm:hidden md:flex':'flex'} `}>
        <li className='relative'> 
-         <NavLink className={({isActive})=>` before:w-0 text-white ${isActive ? 'font-bold text-blue-200 before:absolute before:w-full hover:w-full before:transition-[width] before:duration-500 before:h-[2px] before:bg-white before:left-0 before:bottom-0  ':' hover:text-gray-200' }`} to='/'>Home</NavLink>
+         <NavLink className={({isActive})=>` before:w-0 text-white ${isActive ? 'font-bold text-blue-200 before:absolute before:w-full hover:w-full before:transition-[width] before:duration-500 before:h-[3px] before:bg-[#0055CD] before:left-0 before:bottom-0  ':' hover:text-gray-200' }`} to='/'>Home</NavLink>
        </li>
        <li className='relative'>
-         <NavLink className={({isActive})=>` before:w-0 text-white ${isActive ? 'font-bold text-blue-200 before:absolute before:w-full hover:w-full before:transition-[width] before:duration-500 before:h-[2px] before:bg-white before:left-0 before:bottom-0  ':' hover:text-gray-200' }`} to='/aboutus'>  About Us</NavLink>
+         <NavLink className={({isActive})=>` before:w-0 text-white ${isActive ? 'font-bold text-blue-200 before:absolute before:w-full hover:w-full before:transition-[width] before:duration-500 before:h-[3px] before:bg-[#0055CD] before:left-0 before:bottom-0  ':' hover:text-gray-200' }`} to='/aboutus'>  About Us</NavLink>
        </li>
        <li className='relative'>
-         <NavLink className={({isActive})=>` before:w-0 text-white ${isActive ? 'font-bold text-blue-200 before:absolute before:w-full hover:w-full before:transition-[width] before:duration-500 before:h-[2px] before:bg-white before:left-0 before:bottom-0  ':' hover:text-gray-200' }`} to='/products'>  Products</NavLink>
+         <NavLink className={({isActive})=>` before:w-0 text-white ${isActive ? 'font-bold text-blue-200 before:absolute before:w-full hover:w-full before:transition-[width] before:duration-500 before:h-[3px] before:bg-[#0055CD] before:left-0 before:bottom-0  ':' hover:text-gray-200' }`} to='/products'>  Products</NavLink>
        </li>
        <li className='relative'>
-         <NavLink className={({isActive})=>` before:w-0 text-white ${isActive ? 'font-bold text-blue-200 before:absolute before:w-full hover:w-full before:transition-[width] before:duration-500 before:h-[2px] before:bg-white before:left-0 before:bottom-0  ':' hover:text-gray-200' }`} to='/services'>Services</NavLink>
-       </li>
-       <li className='relative'>
-         <NavLink className={({isActive})=>` before:w-0 text-white ${isActive ? 'font-bold text-blue-200 before:absolute before:w-full hover:w-full before:transition-[width] before:duration-500 before:h-[2px] before:bg-white before:left-0 before:bottom-0  ':' hover:text-gray-200' }`} to='/properities'>Properities</NavLink>
+         <NavLink className={({isActive})=>` before:w-0 text-white ${isActive ? 'font-bold text-blue-200 before:absolute before:w-full hover:w-full before:transition-[width] before:duration-500 before:h-[3px] before:bg-[#0055CD] before:left-0 before:bottom-0  ':' hover:text-gray-200' }`} to='/properities'>Properities</NavLink>
        </li>
     
+   
        <li className='relative'>
-       <NavLink className={({isActive})=>` before:w-0 text-white ${isActive ? 'font-bold text-blue-200 before:absolute before:w-full hover:w-full before:transition-[width] before:duration-500 before:h-[2px] before:bg-white before:left-0 before:bottom-0  ':' hover:text-gray-200' }`} to='/agents'>Agents</NavLink>
-       </li>
-       <li className='relative'>
-        <NavLink className={({isActive})=>` before:w-0 text-white ${isActive ? 'font-bold text-blue-200 before:absolute before:w-full hover:w-full before:transition-[width] before:duration-500 before:h-[2px] before:bg-white before:left-0 before:bottom-0  ':' hover:text-gray-200' }`} to='/Authpage'>Login</NavLink>
+        <NavLink className={({isActive})=>` before:w-0 text-white ${isActive ? 'font-bold text-blue-200 before:absolute before:w-full hover:w-full before:transition-[width] before:duration-500 before:h-[3px] before:bg-[#0055CD] before:left-0 before:bottom-0  ':' hover:text-gray-200' }`} to='/Authpage'>Login</NavLink>
        </li>
      
 

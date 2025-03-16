@@ -16,7 +16,7 @@ import person4 from '../../assets/imgs/Ellipse 1 (3).png';
 import star from '../../assets/imgs/Star 1.png'
 import { BackgroundContext } from '../../context/BackrgroundContext/BackrgroundContext';
 import Navbar from '../Navbar/Navbar';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../lib/ProductSlice';
 
@@ -34,8 +34,7 @@ export default function ProductDetails() {
 
   return (
    <>
-   <Navbar backgroundColor={backgroundColor} />
-<div className=' pt-14 relative'>
+<div className=' pt-[142px] relative'>
     <div className=' mx-auto sm:px-16'>
     <h2 className='text-[#000000] mb-3 font-semibold'>St. Crystal</h2>
     <div className='flex sm:flex-col sm:flex-wrap sm:gap-4 lg:flex-row lg:flex-nowrap justify-between mb-4'>
@@ -70,7 +69,7 @@ export default function ProductDetails() {
                 <p className='mb-2'>Bedrooms</p>
                 <div className='flex gap-1.5 items-center'>
                   <img src={Frame25} alt="" />
-                  <span>4</span>
+                  <span>2</span>
                 </div>
               </div>
 
@@ -78,7 +77,7 @@ export default function ProductDetails() {
                 <p className='mb-2'>Bathrooms</p>
                 <div className='flex gap-1.5 items-center'>
                   <img src={Bath} alt="" />
-                  <span>4</span>
+                  <span>1</span>
                 </div>
               </div>
 
@@ -110,7 +109,11 @@ export default function ProductDetails() {
             <div className='lg:w-1/4 border border-gray-300 rounded-xl p-4'>
               <p className='mb-2'>Rent Price</p>
               <p>$2500 <span>/month</span></p>
-              <button className='text-white rounded-md bg-[#0055CD] px-2 py-1 w-full mt-2 cursor-pointer'>Apply Now</button>
+            
+            
+                 <Link to={`/Reservation/${selectedProduct.id}`}>         
+              <button className='text-white rounded-md bg-[#0055CD] px-2 py-1 w-full mt-2 cursor-pointer'>Book now</button>
+            </Link>
             </div>
           </div>
 

@@ -60,7 +60,7 @@ const handleSearch = () => {
     <>
 <div className='relative'>
     <div className='bg-white shadow-2xl w-full mx-auto p-8  '>
-        <p className='mb-4'>Search for available properties</p>
+        <p className='mb-4  text-[20px] text-[#000000]'>Search for available properties</p>
         <div className='grid grid-cols-12 gap-2 w-[80%] mx-auto '>
            <div className='relative sm:col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 '>
 

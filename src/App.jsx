@@ -21,12 +21,16 @@ import Profile from './Pages/Profile/Profile'
 import ProductProvider from './context/ProductsContext/ProductsContext'
 import BackgroundProvider from './context/BackrgroundContext/BackrgroundContext'
 import SearchResult from './Pages/SearchResult/SearchResult'
+import Reservation from './Pages/Reservation/Reservation'
+import Popup from './Components/Popup/Popup'
 
 
 
 function App() {
   const [backgroundColor , setBackgroundColor] = useState('bg-transparent');
- 
+  const Hadlepopup= ()=> {
+    setShowpupup(true)
+  };
 
   
   const routes= createBrowserRouter([
@@ -38,12 +42,11 @@ function App() {
         {path:'favproducts' ,element:<FavProducts/>},
         {path:'products' ,element:<Products />},
         {path:'searchResult' ,element:<SearchResult />},
-        {path:'services' ,element:<Services />},
         {path:'filteredproducts' ,element:<FilteredProducts />},
         {path:'products/:id' ,element:<ProductDetails />},
         {path:'properities' ,element:<Properities/>},
         {path:'Authpage' ,element:<AuthView />},
-
+        {path:'Reservation/:id' ,element:<Reservation  Hadlepopup={Hadlepopup}/> },
         {path:'profile' ,element:<Profile/>},
     
       ]

@@ -10,7 +10,7 @@ const AuthView = () => {
   const switchToRegister = () => setAuthMode('register');
 
   return (
-    <div className="  mx-auto px-4  min-h-screen  pt-20">
+    <div className="  md:mt-40 px-4  min-h-screen  pt-20">
       <div className="grid grid-cols-1 md:grid-cols-2  gap-10  ">
         
         {/* قسم تسجيل الدخول والتسجيل */}

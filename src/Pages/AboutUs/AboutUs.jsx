@@ -17,10 +17,7 @@ export default function AboutUs() {
     
     
 
-//     useEffect(()=>{
-//  setBackgroundColor('#FFFFFF2B');
-//     },[])
-   
+
 
   return (
    <>

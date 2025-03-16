@@ -4,11 +4,13 @@ import email from '../../assets/imgs/Vector (4).png'
 import phone from '../../assets/imgs/Vector (5).png'
 import { Link } from 'react-router-dom';
 import Favorite from '../../assets/imgs/favorite.png';
+import { useSelector } from 'react-redux';
 
 
 export default function Profile() {
 
-  
+  const reservations = useSelector((state) => state.booking.reservations);
+
   return (
     <>
 
@@ -23,9 +25,9 @@ export default function Profile() {
      </div>
     </div>
 
-    <div className='grid grid-cols-12 gap-2 mt-[300px] px-16 mb-8'>
+    <div className='grid grid-cols-12 gap-2 mt-[200px] px-16 mb-8'>
    <div className='sm:col-span-12 md:col-span-8 l:col-span-9 '>
-   <h2 className='font-semibold text-xl left-10 top-5 mt-6 text-[#3E3E3E] relative mb-8'> 
+   <h2 className='font-semibold text-xl left-10 top-5  text-[#3E3E3E] relative mb-8'> 
     <span className='h-[2px] w-[30px] bg-[#3E3E3E] absolute top-3.5 -left-10 text-uppercase'></span> About me</h2>
 
     <p className='sm:w-100 sm:mb-6 lg:w-2/3'>
@@ -38,13 +40,13 @@ export default function Profile() {
         <h2 className='text-xl font-bold mb-4'>Contact Info</h2>
         <div className='flex gap-2 items-center mb-2'>
             <div className='text-white bg-[#0055CD] w-[40px] h-[40px] rounded-full flex justify-center items-center'>
-            <img className='w-[25px] h-[25px]' src={email} />
+            <img className='w-[25px] h-[25px]' src={phone} />
             </div>
             <p>@Mail.com</p>
         </div>
         <div className='flex gap-2 items-center'>
         <div className='text-white bg-[#0055CD] w-[40px] h-[40px] rounded-full flex justify-center items-center'>
-            <img className='w-[25px] h-[25px] ' src={phone} />
+            <img className='w-[25px] h-[25px] ' src={email} />
             </div>
             <p>0023838383</p>
         </div>
@@ -55,26 +57,41 @@ export default function Profile() {
 
     <div className='px-16'>
     <h2 className='font-semibold text-xl left-10 top-5 mt-6 text-[#3E3E3E] relative mb-8'> 
-    <span className='h-[2px] w-[30px] bg-[#3E3E3E] absolute top-3.5 -left-10 text-uppercase '></span> your reservation</h2>
+   
+   
+    <span className='h-[2px] w-[30px] bg-[#3E3E3E] absolute top-3.5 -left-10 text-uppercase '></span>My Reservations</h2>
 
 
-    <div className='grid grid-cols-12 gap-14 mb-8'>
-        <div className='sm:col-span-12 md:col-span-6 lg:col-span-4'>
-            <img src="https://s3-alpha-sig.figma.com/img/92c9/482e/c978c89a04b96f17195587570522e793?Expires=1742774400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=oQ3Kkf~pih-j1PiL66WqSlwVhbVfDhs7qARkDz0t8yXmtgiF4odwvejpeqthe17ZcGt0J1HI4rAteAh98N19QJgQ8STo-IrWRBUjnP2hkatHlCoNkfHqMoVxerQ6UKI~Qsxdru2T3NXtbwZZYl4WBZVI4LtEykFeM9DEvLpCmNn7yzTdi4wbWPMycgGRw9lZ3b14blfESzhZUSyucopVv-9vItD3mwWTKn8AmgV1~fOYde1oBMvbca5QaaTFgdvvm8TyTBZMKS~jWuLo0mK2o8HhftTO5dHpbZaWILmnt5Fr-snGI8kSbPAKmptX0F3IseiAajhXvPCOpRUIvHsYLw__" className='w-full h-[302px]' alt="" />
-        </div>
+   
+   
+{reservations.length > 0 ? (
+  <div className="grid grid-cols-12 gap-14 mb-8 ">
+    {reservations.map((reservation, index) => (
+      <div key={index} className='sm:col-span-12 md:col-span-6 lg:col-span-4 bg-white p-4'>
+        <img className='w-full h-[302px] rounded-xl' src={reservation.image} alt={reservation.title} />
         <div className='sm:col-span-12 md:col-span-6 lg:col-span-8 pt-12'>
-            <div className='flex gap-2 items-center mb-3'>
-                <i className="fa-solid fa-location-dot"></i>
-                <p>Banana Island, Lagos</p>
-            </div>
-            <p className='mb-8 w-1/3'>Your reservation on 7 May at 3 Pm in 
-            a place</p>
-            <div className='flex items-center gap-12'>
-                <button className='bg-[#1E1E1E94] text-white px-3 py-2 w-[177px] rounded-md cursor-pointer'>Booked</button>
-                <p className='text-[#000000] font-bold'> $ 100,000,000</p>
-            </div>
-        </div>
+    <div className='flex gap-2 items-center mb-3'>
+        <i className="fa-solid fa-location-dot"></i>
+        <h3 className='font-bold'>{reservation.title}</h3> 
+          </div>
+   
+    <div className='flex items-center gap-12'>
+        <button className='bg-[#1E1E1E94] text-white px-3 py-2 w-[177px] rounded-md cursor-pointer'>Booked</button>
+        <p className='text-[#000000] font-bold'>{reservation.price} {reservation.currency}</p>
+
     </div>
+    
+    
+      </div>     
+      </div>
+   
+   
+   ))}
+  </div>
+) : (
+  <p className='font-bold px-3 py-3 bg-gray-500 w-[200px]'>No reservations yet. <Link to='/products' className='text-blue-800  font-extrabold'>View Properties..</Link> </p>
+)}
+
     </div>
 
 
