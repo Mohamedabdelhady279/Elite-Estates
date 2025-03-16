@@ -6,12 +6,12 @@ import { MdOutlineError } from 'react-icons/md';
 import { FaCheck, FaEye, FaEyeSlash, FaFacebook, FaGoogle } from 'react-icons/fa';
 import {   signInWithPopup } from "firebase/auth";
 import { facebookProvider, GoogleProvider,auth } from "../../../firebaseConfig";
-import { registerUser } from '../../../userapi';
 import { Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { setuser } from '../../lib/UserNameSlice';
+import { registerUser } from '../../../userapi';
 
 const Register = ({setAuthMode}) => {
 

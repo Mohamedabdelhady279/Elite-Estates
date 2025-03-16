@@ -6,12 +6,12 @@ import { FaCheck, FaEye, FaEyeSlash, FaFacebook, FaGoogle } from 'react-icons/fa
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import {   signInWithPopup } from "firebase/auth";
 import { facebookProvider, GoogleProvider,auth } from "../../../firebaseConfig";
-import { loginUser } from '../../../userapi';
 import { ToastContainer, toast } from 'react-toastify';
 import { Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { setuser } from '../../lib/UserNameSlice';
 import { useDispatch } from 'react-redux';
+import { loginUser } from '../../../userapi';
 
 
 

@@ -5,14 +5,10 @@ import phone from '../../assets/imgs/Vector (5).png'
 import { Link, useNavigate } from 'react-router-dom';
 import Favorite from '../../assets/imgs/favorite.png';
 import { useDispatch, useSelector } from 'react-redux';
-import { setuser } from '../../lib/UserNameSlice';
-import { getUserProfile } from '../../../userapi';
 
 
 export default function Profile() {
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
   const reservations = useSelector((state) => state.booking.reservations);
   const userinfo = useSelector((state) => state.userinfo.userinfo); // جلب بيانات المستخدم من Redux
 
