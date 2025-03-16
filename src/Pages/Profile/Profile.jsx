@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import profile from '../../assets/imgs/edit.png';
+import editIcon from '../../assets/imgs/editIcon.png';
 import email from '../../assets/imgs/Vector (4).png'
 import phone from '../../assets/imgs/Vector (5).png'
 import { Link, useNavigate } from 'react-router-dom';
@@ -42,7 +42,7 @@ export default function Profile() {
               className="w-full h-full rounded-md"
               src={userinfo.photoURL || 'https://s3-alpha-sig.figma.com/img/833b/fcf2/fbdf822af730dc5a309217c373e76ab9?Expires=1742774400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=fIhHhX1B~92nfteVTN~VwXvdcyoI~On7ZqEA48OiQkAJJ9wW4ni-Bly5UOYH-bkUg2MHAuLPqU2jl3fDfBhN1qKgZwB1yCOWZehF4nAI6YQY~cRufYj47GvPOr3FBCsP-kTIYNpMVjb8HNLzxiQ-GlM2XHP6nF78pXQkXsM9gfbsgcGJwBuV9Ndw078SZtyBqIqWzgpwJjbhHDQLz3r0wXT7Xwl-qAFe6i98BcDm0gmGVt5XtNbpbJ0M-2u-wTYKMjx0KTPKEHNgFI9XEyH4lbHJS~9wSbCsuftK4173Q-IgLIOFCtoK5-78Rh6R7ZEwzIHzfMf8yxP4y5dgx1xtxg__'} // صورة المستخدم أو صورة افتراضية
               alt="Profile"
-            />    <img className='absolute top-5 right-5 cursor-pointer' src={profile} alt="" />
+            />    <img className='absolute top-5 right-5 cursor-pointer' src={editIcon} alt="" />
     </div>
     <h3 className="text-center text-[#000000] text-2xl font-bold">{userinfo.name || userinfo.username || "Guest" }</h3>
     </div>
