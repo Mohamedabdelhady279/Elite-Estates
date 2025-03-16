@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { setuser } from './src/lib/UserNameSlice';
+import { setuser } from './lib/UserNameSlice';
 
 const API_BASE_URL = 'https://login-production-4cdb.up.railway.app/api/users';
 
