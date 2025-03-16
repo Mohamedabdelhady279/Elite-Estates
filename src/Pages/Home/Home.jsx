@@ -5,10 +5,11 @@ import Services from '../../Components/Services/Services'
 import Blog from '../../Components/Blog/Blog'
 import axios from 'axios'
 import Search from '../../Components/Search/Search'
+import {  useNavigate } from 'react-router-dom'
 
 export default function Home() {
    
-  
+  const navigate=useNavigate();
    
 
   return (
@@ -18,7 +19,7 @@ export default function Home() {
         <div className='text-white w-[1336px] mx-auto mt-20 pt-20  sm:pl-12'>
             <h2 className='text-5xl mb-8  font-bold fs-1 capitalize leading-14'>find a house <br /> that suits you </h2>
             <p className='mb-8  lg:text-left lg:w-full sm:w-3/4 '>want to fin a home? we are ready to help you find one that suits <br /> your lifestyle and needs</p>
-            <button className='bg-[#1E1E1E] text-white w-fit px-4 py-1 w-fullmb-8 cursor-pointer '>Get started</button>
+            <button onClick={()=>navigate('/products')} className='bg-[#1E1E1E] text-white w-fit px-4 py-1 w-fullmb-8 cursor-pointer '>Get started</button>
             <div className='flex justify-between w-100'>
             <div>
                 <h3 className='font-bold mb-2 text-[#E7E7E7]'>1200 <span> <i className="text-[#0055CD]   ml-2 fa-solid fa-plus"></i></span></h3>

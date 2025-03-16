@@ -3,7 +3,10 @@ import React, { useContext, useEffect, useState } from "react";
 import logo from "../../assets/imgs/logo.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { BackgroundContext } from "../../context/BackrgroundContext/BackrgroundContext";
-import Favorite from '../../assets/imgs/favorite.png';
+import Profileee from '../../assets/imgs/Profileee.png';
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../lib/UserNameSlice";
+import { getAuth, signOut } from "firebase/auth";
 
 
 export default function Navbar({ disableScroll = false }  ) {
@@ -11,16 +14,28 @@ export default function Navbar({ disableScroll = false }  ) {
   const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
   const {backgroundColor ,setBackgroundColor} = useContext(BackgroundContext);
-  const [isMobileMenuOpen ,setIsMobileMenuOpen] = useState(false);
- 
+  const [isMobileMenuOpen ,setIsMobileMenuOpen] = useState(true);
+  const userinfo = useSelector((state) => state.userinfo.userinfo); // جلب بيانات المستخدم من Redux
+  const dispatch = useDispatch();
   
+  
+  
+  // 🔹 تحديد الصورة
+    const avatarUrl = userinfo?.photoURL
+    ? userinfo.photoURL
+    : `https://ui-avatars.com/api/?name=${encodeURIComponent(userinfo?.name || "Guest")}&background=0D8ABC&color=fff&bold=true`;
 
-  const toggleMobileMenu = () => {
+ 
+ 
+ 
+    const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
    
    
   }
 
+  
+  
   useEffect(() => {
     const handleScroll = () => {
       const screenHeight = 846.5;
@@ -30,6 +45,11 @@ export default function Navbar({ disableScroll = false }  ) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+ 
+ 
+ 
+ 
+ 
   const navBgColor = disableScroll ? backgroundColor : (isScrolled ? "bg-[#25356b]" : backgroundColor);
 
   return (
@@ -77,11 +97,20 @@ export default function Navbar({ disableScroll = false }  ) {
 <button onClick={()=>navigate('/products')} className="w-fit px-3 py-2 border border-white rounded cursor-pointer">
           Find A House
         </button>
-        <NavLink className={` before:w-0 text-white hover:text-gray-200`} to='/profile'>
-        <img className='w-[40px]  h-[40px] rounded-full' src='https://s3-alpha-sig.figma.com/img/833b/fcf2/fbdf822af730dc5a309217c373e76ab9?Expires=1742774400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=fIhHhX1B~92nfteVTN~VwXvdcyoI~On7ZqEA48OiQkAJJ9wW4ni-Bly5UOYH-bkUg2MHAuLPqU2jl3fDfBhN1qKgZwB1yCOWZehF4nAI6YQY~cRufYj47GvPOr3FBCsP-kTIYNpMVjb8HNLzxiQ-GlM2XHP6nF78pXQkXsM9gfbsgcGJwBuV9Ndw078SZtyBqIqWzgpwJjbhHDQLz3r0wXT7Xwl-qAFe6i98BcDm0gmGVt5XtNbpbJ0M-2u-wTYKMjx0KTPKEHNgFI9XEyH4lbHJS~9wSbCsuftK4173Q-IgLIOFCtoK5-78Rh6R7ZEwzIHzfMf8yxP4y5dgx1xtxg__' alt="" />
-           
-        </NavLink>
+       
+        {userinfo ? (
+        <div className="flex items-center gap-2">
+                 <NavLink to="/profile">
 
+          <img src={userinfo.photoURL} alt="User Avatar" className="w-[40px] h-[40px] rounded-full" />
+          </NavLink>
+
+        </div>
+      ) :(
+        <NavLink to="/profile">
+            <img className="w-[40px] h-[40px] rounded-full" src={Profileee} alt="User Avatar" />
+          </NavLink>
+      )}
 </div>
       </div>
     </div>

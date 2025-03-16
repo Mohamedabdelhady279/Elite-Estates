@@ -15,7 +15,7 @@ import '../../index.css';
 import { useNavigate } from 'react-router-dom';
 export default function AboutUs() {
     
-    
+    const navigate = useNavigate();
 
 
 
@@ -24,7 +24,7 @@ export default function AboutUs() {
    
   <section className='about mt-0 '>
 
-    <section className='about_us sm:mb-16 sm:pb-16'>
+    <section className='about_us sm:mb-16 sm:pb-8'>
     
     <div  className='about_title'>
     <h2 className='text-center '>About Us</h2>
@@ -42,27 +42,32 @@ export default function AboutUs() {
 
 
     <section className='about_contact lg:px-16 sm:mt-16'>
-    <div className='about-contact-all flex sm:flex-col justify-between sm:flex-wrap md:flex-row px-14'>
+    <div className='about-contact-all flex sm:flex-col justify-between items-center sm:flex-wrap md:flex-row px-14'>
 
     <div className='about_contact-contant sm:w-100 md:w-1/2 pt-16'>
-    <h3>ABOUT</h3>
-    <h4>
+    <h2 className='font-semibold mb-8 text-xl left-10 top-5 mt-6 text-[#3E3E3E] relative '> 
+  
+  <span className='h-[2px] w-[30px] bg-[#3E3E3E] absolute top-3.5 -left-10'></span> About</h2>    
+    
+    <h4 className='text-[#000000] font-semibold lg:text-6xl sm:text-4xl mb-6'>
         The Exclusive and 
         Premium Property
     </h4>
     <p>
     We specialize in curating exclusive, high-quality properties that meet the highest standards of luxury and functionality. Our tailored approach ensures that every home is a perfect reflection of your lifestyle and aspirations.
     </p>
-    <button onClick={()=>navigate('/')} className="w-fit px-3 py-2 bg-[#0055CD] text-[#FFFFFF] border border-white rounded cursor-pointer">
+   
+    <button onClick={()=>navigate('/')} className="w-fit mt-20 px-3 py-2 bg-[#0055CD] text-[#FFFFFF] border border-white rounded cursor-pointer ">
     Contact Us
       </button>
-    </div>
+    
+  </div>
 
     <div className='about_contact-images flex  gap-2 sm:w-100 h-[400px] md:w-1/2 relative sm:mt-16'>
-    <div  className='w-4/9 absolute left-14'>
+    <div  className='w-4/9 absolute '>
     <img className='img_contact1' src={imgContact1} alt="" />
     </div>
-     <div className='w-4/9 absolute -top-14 sm:right-12 lg:right-0'>
+     <div className='w-4/9 absolute -top-14 sm:right-8 lg:right-0'>
      <img className='img_contact2' src={imgContact2} alt="" />
      </div>
     </div>
@@ -77,16 +82,19 @@ export default function AboutUs() {
 
 
     <section className='about_vision  sm:px-8 lg:px-32'>
-    <h2 className='font-semibold mb-8 text-xl left-10 top-5 mt-6 text-[#3E3E3E] relative '> 
+    <h2 className='font-semibold mb-8 text-xl left-10 top-5 mt-20 text-[#3E3E3E] relative '> 
+  
     <span className='h-[2px] w-[30px] bg-[#3E3E3E] absolute top-3.5 -left-10'></span> Commitment</h2>
        
         <h4 className='text-2xl font-bold mb-6'>Our Vision</h4>
-        <div className=' flex justify-between items-center text-[#606060] my-6 '>
-            <p>  Our vision is to revolutionize the real estate market by crafting spaces that blend modern design with timeless elegance.</p>
-            <button className='text-white bg-[#0055CD] px-5 py-2'>Learn More</button>
-        </div>
+        <div className='flex flex-col md:flex-row justify-between items-center text-gray-600 text-center md:text-left'>
+            <p className='text-lg md:w-3/5 mb-4 md:mb-0'>
+              Our vision is to revolutionize the real estate market by crafting spaces that blend modern design with timeless elegance.
+            </p>
+            <button onClick={() => navigate('/products')} className='text-white bg-[#0055CD] px-5 py-2 cursor-pointer'>Learn More</button>
+          </div>
 
-        <div className="about_vision-content flex sm:flex-col sm:flex-wrap justify-between md:flex-row mt-12 pb-8">
+        <div className="about_vision-content flex sm:flex-col sm:flex-wrap justify-between md:flex-row mt-12 pb-20">
             <div className="about_vision-image  sm:w-100 lg:w-1/2 align-middle">
                 <img src={imgVision} className='w-full' alt="imgVision" />
             </div>

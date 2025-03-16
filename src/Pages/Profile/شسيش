@@ -1,0 +1,134 @@
+import React, { useEffect } from 'react';
+import profile from '../../assets/imgs/edit.png';
+import email from '../../assets/imgs/Vector (4).png';
+import phone from '../../assets/imgs/Vector (5).png';
+import { Link, useNavigate } from 'react-router-dom';
+import Favorite from '../../assets/imgs/favorite.png';
+import { useSelector, useDispatch } from 'react-redux';
+import { getUserProfile } from '../../../userapi';
+import { setuser } from '../../lib/UserNameSlice';
+
+
+export default function Profile() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const reservations = useSelector((state) => state.booking.reservations);
+  const userinfo = useSelector((state) => state.userinfo.userinfo); // جلب بيانات المستخدم من Redux
+
+ 
+  useEffect(() => {
+    const storedUser = localStorage.getItem('userinfo'); // استرجاع البيانات من `localStorage`
+    
+    if (storedUser) {
+      dispatch(setuser(JSON.parse(storedUser))); // تحديث Redux بالبيانات المخزنة
+      return;
+    }
+
+    const fetchUserProfile = async () => {
+      try {
+        const userData = await getUserProfile();
+        dispatch(setuser(userData));
+        localStorage.setItem('userinfo', JSON.stringify(userData)); // حفظ البيانات في `localStorage`
+      } catch (error) {
+        console.error('Failed to fetch user profile:', error);
+        navigate('/login');
+      }
+    };
+
+    if (!userinfo) {
+      fetchUserProfile();
+    }
+  }, [dispatch, navigate]);
+
+ 
+ 
+ 
+ 
+ 
+    if (!userinfo) {
+      return (
+        <div className="text-center py-10">
+          <p className="text-xl">Please log in to view your profile.</p>
+          <Link to="/login" className="text-blue-600 underline">Go to Login</Link>
+        </div>
+      );
+    }
+
+  return (
+    <>
+      <div className="profile relative top-0 left-0 bg-[#AEC6E8] h-[656px] mb-8 rounded-bl-[-50px]">
+        <div className="sm:w-[250px] lg:w-[394px] sm:h-[250px] md:h-[300px] md:w-[300px] md:-bottom-[150px] md:left-[300px] lg:h-[394px] rounded-md absolute sm:-bottom-[125px] lg:-bottom-[98px] sm:left-[130px] lg:left-[559px] border-3 border-blue-600">
+          <div className="text-center mb-6">
+            <img
+              className="w-full h-full rounded-md"
+              src={userinfo.photoURL || 'https://s3-alpha-sig.figma.com/img/833b/fcf2/fbdf822af730dc5a309217c373e76ab9?Expires=1742774400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=fIhHhX1B~92nfteVTN~VwXvdcyoI~On7ZqEA48OiQkAJJ9wW4ni-Bly5UOYH-bkUg2MHAuLPqU2jl3fDfBhN1qKgZwB1yCOWZehF4nAI6YQY~cRufYj47GvPOr3FBCsP-kTIYNpMVjb8HNLzxiQ-GlM2XHP6nF78pXQkXsM9gfbsgcGJwBuV9Ndw078SZtyBqIqWzgpwJjbhHDQLz3r0wXT7Xwl-qAFe6i98BcDm0gmGVt5XtNbpbJ0M-2u-wTYKMjx0KTPKEHNgFI9XEyH4lbHJS~9wSbCsuftK4173Q-IgLIOFCtoK5-78Rh6R7ZEwzIHzfMf8yxP4y5dgx1xtxg__'} // صورة المستخدم أو صورة افتراضية
+              alt="Profile"
+            />
+            <img className="absolute top-5 right-5 cursor-pointer" src={profile} alt="Edit" />
+          </div>
+          <h3 className="text-center text-[#000000] text-2xl font-bold">{userinfo.name || userinfo.username }</h3>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-12 gap-2 mt-[200px] px-16 mb-8">
+        <div className="sm:col-span-12 md:col-span-8 lg:col-span-9">
+          <h2 className="font-semibold text-xl left-10 top-5 text-[#3E3E3E] relative mb-8">
+            <span className="h-[2px] w-[30px] bg-[#3E3E3E] absolute top-3.5 -left-10 text-uppercase"></span> About me
+          </h2>
+          <p className="sm:w-100 sm:mb-6 lg:w-2/3">
+            {userinfo.about || 'Vorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.'}
+          </p>
+        </div>
+
+        <div className="sm:col-span-12 md:col-span-4 lg:col-span-3 bg-[#66666624] text-[#000000] px-2 py-3 rounded-xl">
+          <h2 className="text-xl font-bold mb-4">Contact Info</h2>
+          <div className="flex gap-2 items-center mb-2">
+            <div className="text-white bg-[#0055CD] w-[40px] h-[40px] rounded-full flex justify-center items-center">
+              <img className="w-[25px] h-[25px]" src={phone} alt="Phone" />
+            </div>
+            <p>{userinfo.email || '@Mail.com'}</p>
+          </div>
+          <div className="flex gap-2 items-center">
+            <div className="text-white bg-[#0055CD] w-[40px] h-[40px] rounded-full flex justify-center items-center">
+              <img className="w-[25px] h-[25px]" src={email} alt="Email" />
+            </div>
+            <p>{userinfo.phoneNumber || '0023838383'}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* باقي الكود للحجوزات والقوائم يبقى كما هو مع استخدام reservations */}
+      <div className="px-16">
+        <h2 className="font-semibold text-xl left-10 top-5 mt-6 text-[#3E3E3E] relative mb-8">
+          <span className="h-[2px] w-[30px] bg-[#3E3E3E] absolute top-3.5 -left-10 text-uppercase"></span> My Reservations
+        </h2>
+        {reservations.length > 0 ? (
+          <div className="grid grid-cols-12 gap-14 mb-8">
+            {reservations.map((reservation, index) => (
+              <div key={index} className="sm:col-span-12 md:col-span-6 lg:col-span-4 bg-white p-4">
+                <img className="w-full h-[302px] rounded-xl" src={reservation.image} alt={reservation.title} />
+                <div className="sm:col-span-12 md:col-span-6 lg:col-span-8 pt-12">
+                  <div className="flex gap-2 items-center mb-3">
+                    <i className="fa-solid fa-location-dot"></i>
+                    <h3 className="font-bold">{reservation.title}</h3>
+                  </div>
+                  <div className="flex items-center gap-12">
+                    <button className="bg-[#1E1E1E94] text-white px-3 py-2 w-[177px] rounded-md cursor-pointer">Booked</button>
+                    <p className="text-[#000000] font-bold">{reservation.price} {reservation.currency}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="font-bold px-3 py-3 bg-gray-500 w-[200px]">
+            No reservations yet. <Link to="/products" className="text-blue-800 font-extrabold">View Properties..</Link>
+          </p>
+        )}
+      </div>
+
+      {/* قسم My Listing يبقى كما هو */}
+      {/* يمكنك تحديثه لاحقًا ليعتمد على بيانات المستخدم إذا كان لديك API للقوائم */}
+    </>
+  );
+}

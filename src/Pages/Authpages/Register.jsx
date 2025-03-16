@@ -10,6 +10,8 @@ import { registerUser } from '../../../userapi';
 import { Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
+import { setuser } from '../../lib/UserNameSlice';
 
 const Register = ({setAuthMode}) => {
 
@@ -17,7 +19,7 @@ const Register = ({setAuthMode}) => {
     const [showPassword, setShowPassword] = useState(false);  
     const [firebase, seterorrfirebase] = useState()
     const [loading, setloading] = useState()
-
+    const dispatch = useDispatch();
 
 
 
@@ -30,9 +32,12 @@ const Register = ({setAuthMode}) => {
           __id: user.uid,
           email: user.email,
           username: user.displayName || "User",
+          photoURL: user.photoURL,
+          phoneNumber: user.phoneNumber,
         };
   
-        localStorage.setItem("userinfo", JSON.stringify(userData));
+        dispatch(setuser(userData));
+
         setTimeout(() => navigate("/"), 1000);
       } catch (error) {
         console.log("Google Login Error:", error);
@@ -56,8 +61,11 @@ const Register = ({setAuthMode}) => {
           __id: user.uid,
           email: user.email,
           username: user.displayName || "User",
+          photoURL: user.photoURL,
+          phoneNumber: user.phoneNumber,
         };
-        localStorage.setItem("userinfo", JSON.stringify(userData));
+        dispatch(setuser(userData));
+
         setTimeout(() => navigate("/"), 1000);
       } catch (error) {
         console.log("Facebook Login Error:", error);
@@ -70,6 +78,8 @@ const Register = ({setAuthMode}) => {
         seterorrfirebase("Failed to login with Facebook. Please try again.");
       }
     };
+
+ 
 
 
     const formik = useFormik ({

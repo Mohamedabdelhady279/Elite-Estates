@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { setuser } from './src/lib/UserNameSlice';
 
 const API_BASE_URL = 'https://login-production-4cdb.up.railway.app/api/users';
 
@@ -22,16 +23,20 @@ export const registerUser = async (name, email, password) => {
 
 
 // تسجيل الدخول
-export const loginUser = async (email, password) => {
+export const loginUser = async (email, password,dispatch) => {
   try {
     const response = await axios.post(`${API_BASE_URL}/login`, { email, password });
 
     if (response.data.token) {
       localStorage.setItem('token', response.data.token); // حفظ التوكن
+     // تحديث Redux بعد تسجيل الدخول
+     dispatch(setuser(response.data.user)); 
     }
 
     return response.data;
   } catch (error) {
+    console.error("Login Error:", error.response?.data || error.message);
+
     throw new Error(error.response?.data?.message || 'Login failed');
   }
 };

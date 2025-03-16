@@ -15,7 +15,7 @@ const AuthView = () => {
         
         {/* قسم تسجيل الدخول والتسجيل */}
         <div className="flex justify-center">
-          <div className="w-full max-w-md p-6 rounded-lg shadow-lg">
+          <div className="w-full max-w-md p-6 rounded-lg ">
             <div className="flex w-full">
               <button
                 onClick={switchToLogin}

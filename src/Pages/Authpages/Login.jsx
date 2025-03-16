@@ -10,6 +10,8 @@ import { loginUser } from '../../../userapi';
 import { ToastContainer, toast } from 'react-toastify';
 import { Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { setuser } from '../../lib/UserNameSlice';
+import { useDispatch } from 'react-redux';
 
 
 
@@ -21,7 +23,8 @@ const Login = () => {
     const navigate = useNavigate();
   const [firebase, seterorrfirebase] = useState()
     const [loading, setloading] = useState()  
- 
+    const dispatch = useDispatch();
+
  
     const handleGoogleLogin = async () => {
       try {
@@ -32,10 +35,14 @@ const Login = () => {
           __id: user.uid,
           email: user.email,
           username: user.displayName || "User",
+          photoURL: user.photoURL,
+          phoneNumber: user.phoneNumber,
         };
   
-        localStorage.setItem("userinfo", JSON.stringify(userData));
-        setTimeout(() => navigate("/"), 1000);
+        dispatch(setuser(userData));
+        toast.success(`Welcome, ${user.displayName}!`, { position: "top-right", autoClose: 2000, hideProgressBar: true, theme: "dark", transition: Bounce });
+
+        setTimeout(() => navigate("/"), 2000);
       } catch (error) {
         console.log("Google Login Error:", error);
   
@@ -58,8 +65,11 @@ const Login = () => {
           __id: user.uid,
           email: user.email,
           username: user.displayName || "User",
+          photoURL: user.photoURL,
+          phoneNumber: user.phoneNumber,
         };
-        localStorage.setItem("userinfo", JSON.stringify(userData));
+        dispatch(setuser(userData));
+
         setTimeout(() => navigate("/"), 1000);
       } catch (error) {
         console.log("Facebook Login Error:", error);
@@ -89,7 +99,7 @@ const Login = () => {
     }),
     onSubmit: async (values, { setSubmitting, setErrors, }) => {
       try {
-        const userData = await loginUser(values.email, values.password);
+        const userData = await loginUser(values.email, values.password,dispatch);
         console.log("User logged in:", userData);
         toast.success("Welcome to our Website ✨", {
             position: "top-center",
@@ -208,8 +218,8 @@ const Login = () => {
  
  
      {/*google,facebook  */}
-    <div onClick={handleGoogleLogin} className=' flex flex-col md:flex-row justify-center mt-3 gap-4 '>
-  <Link className="w-full   flex justify-center bg-red-600 text-white px-4 py-2 rounded-[10px] hover:bg-red-500">
+    <div  className=' flex flex-col md:flex-row justify-center mt-3 gap-4 '>
+  <Link onClick={handleGoogleLogin} className="w-full   flex justify-center bg-red-600 text-white px-4 py-2 rounded-[10px] hover:bg-red-500">
     <button className='flex items-center gap-2 text-sm rounded-xl cursor-pointer'>
       <FaGoogle className='text-[18px]' /> Login with Google
     </button>

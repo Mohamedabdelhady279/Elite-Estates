@@ -14,6 +14,7 @@ const UserNameSlice = createSlice({
 
     logout:(state) =>{ 
         state.userinfo=null
+
     },
 
   },
