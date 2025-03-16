@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link} from 'react-router-dom';
-import facebookIcon from '../../assets/imgs/Icon (1).png'
-import linkedinIcon from '../../assets/imgs/icon (2).png'
-import instagramIcon from '../../assets/imgs/icon (3).png'
-import twitterIcon from '../../assets/imgs/icon (4).png'
+import facebook from '../../assets/imgs/facebook.png'
+import ln from '../../assets/imgs/ln.png'
+import insta from '../../assets/imgs/insta.png'
+import twwiter from '../../assets/imgs/twwiter.png'
 import { NavLink } from 'react-bootstrap';
 
 export default function Footer() {
@@ -56,10 +56,10 @@ experiences with our clients.
     </div>
 
     <div className='flex  gap-8   py-10 justify-center items-center'>
-      <NavLink to =''>   <img src={facebookIcon} alt="" /></NavLink>
-      <NavLink to =''>   <img src={linkedinIcon} alt="" /></NavLink>
-       <NavLink to =''><img src={instagramIcon} alt="" /></NavLink>
-       <NavLink to =''><img src={twitterIcon} alt="" /></NavLink>
+      <NavLink to =''>   <img src={facebook} alt="" /></NavLink>
+      <NavLink to =''>   <img src={ln} alt="" /></NavLink>
+       <NavLink to =''><img src={insta} alt="" /></NavLink>
+       <NavLink to =''><img src={twwiter } alt="" /></NavLink>
     </div>
     </div>
     </div>
