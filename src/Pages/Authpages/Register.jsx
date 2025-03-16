@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { setuser } from '../../lib/UserNameSlice';
-import { registerUser } from '../../../UserApi.js';
+import { registerUser } from '../../../UserApi';
 
 const Register = ({setAuthMode}) => {
 
